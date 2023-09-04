@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.module.css */
+/* .custom-scrollbar {
+/* custom scrollbar */
+/* ::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+} 
+}  */
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 20px; /*dont seem to work */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f7eaa5b3;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #acacac8b;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555555aa;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
