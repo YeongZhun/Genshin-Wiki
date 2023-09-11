@@ -237,7 +237,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
           <button onClick={handleButtonClickElementGeo}>
             <div className='border-2 border-orange-200 rounded-md mr-2'>
             <img 
-              src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693642842/elements/geo_wpaigr.png"
+              src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694101466/elements/geo.png"
               alt="Geo Element"
               className='w-10 h-10'
             />

@@ -1,42 +1,58 @@
 
 import './index.css'
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import SideBar from './components/SideBar';
 import CharacterGallery from './components/CharacterGallery';
 import { useState, useEffect } from 'react';
 import MainPage from './components/MainPage';
-// import getCharacters from './server/BackendAPITest';
+import axios from 'axios'
+import CharacterIndivDetails from './components/char_indiv_details/CharacterIndivDetails';
+import LoadingScreen from './components/LoadingScreen';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
-  // const [chars, setChars] = useState([]);
-
-  // useEffect(() => {
-  //   // Make an API request to fetch data from your backend
-  //   axios.get('http://localhost:3001/getCharacters') // Replace with your actual API endpoint
-  //     .then((response) => {
-  //       setChars(response.data); // Update state with the fetched data
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetching data:', error);
-  //     });
-  // }, []);
-
-  // const [characters, setCharacters] = useState([]);
-
-  // const fetchCharacters = async () => {
-  //   const characters = await getCharacters();
-  //   setCharacters(characters);
-  // };
   
-  // useEffect(() => {
-  //   fetchCharacters();
-  // }, []);
 
-
-
+  const [chars, setChars] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
+  const location = useLocation();
+  // const navigate = useNavigate();
+
+  useEffect(() => {
+
+    setIsLoading(true);
+
+    axios
+      .get('http://localhost:5000/api/data')
+      .then((response) => {
+        setChars(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
+
+    // Simulate a loading delay with setTimeout
+    // setTimeout(() => {
+    //   axios
+    //     .get('http://localhost:5000/api/data')
+    //     .then((response) => {
+    //       setChars(response.data);
+    //       setIsLoading(false);
+    //     })
+    //     .catch((error) => {
+    //       console.error(error);
+    //       setIsLoading(false);
+    //     });
+    // }, 250); // Adjust the duration as needed
+
+  }, [location.pathname]);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -46,45 +62,134 @@ function App() {
     setIsHovered(false);
   }
 
-
-
-
   return (
+
     <>
-      <Router>
+      <ToastContainer />
+
       {/* <div className="App bg-genshin bg-no-repeat bg-cover bg-center flex font-sans"> */}
       <div className="App bg-orange-50 bg-no-repeat bg-cover bg-center flex font-nunito">
 
-        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} 
-           className={`flex-none bg-orange-100/95 transform transition-transform duration-300 group border-r-2 
-            rounded-sm h-screen fixed ${isHovered ? ' w-64' : ''} `}>
+        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
+          className={`flex-none bg-orange-100 transform transition-transform duration-300 group border-r-2 z-30
+            border-gray-300 rounded-sm h-screen fixed ${isHovered ? ' w-64' : ''} `}>
           <SideBar isHovered={isHovered} />
         </div>
 
-        
+
         <Routes>
-          <Route path="/" element = {
-            <div className='flex-grow ml-40'>
-            <MainPage />
-          
-            <div></div>
+          <Route path="/" element={
+            <div className='flex-grow ml-20'>
+              {isLoading ? (
+                <div className="loading-container">
+                  <LoadingScreen />
+                </div>
+              ) : (
+                <MainPage />
+              )}
+
+
+
             </div>
-          }/>
+          } />
 
-          <Route path="/characters" element = {
-            <div className='flex-grow ml-40'>
-            <CharacterGallery />
+          <Route path="/characters" element={
+            <div className='flex-grow ml-20'>
+              {isLoading ? (
+                <div className="loading-container">
+                  <LoadingScreen />
+                </div>
+              ) : (
+                <CharacterGallery chars={chars} />
+              )}
+
             </div>
-          }/>
+          } />
+
+          {chars.map((character) => (
+            <Route
+              key={character._id}
+              path={`/characters/${encodeURIComponent(character.name)}/Profile`}
+              element={
+                <div className="flex-grow ml-20">
+                  {isLoading ? (
+                    <div className="loading-container">
+                      <LoadingScreen />
+                    </div>
+                  ) : (
+                    <CharacterIndivDetails character={character} />
+                  )}
+
+                </div>
+              }
+            />
+          ))}
+
+          {chars.map((character) => (
+            <Route
+              key={character._id}
+              path={`/characters/${encodeURIComponent(character.name)}/Talent`}
+              element={
+                <div className="flex-grow ml-20">
+                  {/* {isLoading ? (
+                      <div className="loading-container">
+                        <LoadingScreen />
+                      </div>
+                    ) : (
+                      <CharacterIndivDetails character={character} />
+                    )} */}
+                  <CharacterIndivDetails character={character} />
+                </div>
+              }
+            />
+          ))}
+
+          {chars.map((character) => (
+            <Route
+              key={character._id}
+              path={`/characters/${encodeURIComponent(character.name)}/Constellation`}
+              element={
+                <div className="flex-grow ml-20">
+                  {/* {isLoading ? (
+                      <div className="loading-container">
+                        <LoadingScreen />
+                      </div>
+                    ) : (
+                      <CharacterIndivDetails character={character} />
+                    )} */}
+                  <CharacterIndivDetails character={character} />
+                </div>
+              }
+            />
+          ))}
+
+          {chars.map((character) => (
+            <Route
+              key={character._id}
+              path={`/characters/${encodeURIComponent(character.name)}/Comments`}
+              element={
+                <div className="flex-grow ml-20">
+                  {isLoading ? (
+                      <div className="loading-container">
+                        <LoadingScreen />
+                      </div>
+                    ) : (
+                      <CharacterIndivDetails character={character} />
+                    )}
+                  {/* <CharacterIndivDetails character={character} /> */}
+                </div>
+              }
+            />
+          ))}
 
 
-        
         </Routes>
+
 
       </div>
 
-      </Router>
     </>
+
   )
 }
 

@@ -33,7 +33,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f7eaa5b3;
+  background: #f7e9a500;
 }
 
 /* Handle */
@@ -55,3 +55,4 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+

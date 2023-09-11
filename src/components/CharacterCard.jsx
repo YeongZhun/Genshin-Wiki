@@ -1,15 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function CharacterCard({ character }) {
 
-  const handleClickTest = () => {
+  const handleClickCharIndiv = () => {
     alert("Hi")
   }
 
   return (
     <div className="bg-orange-100/75 p-2.5 rounded-md shadow-md w-44 
       hover:scale-110 hover:border-4 hover:border-orange-300 border border-orange-200">
-      <button onClick={handleClickTest}>
+      <Link to={`/characters/${character.name}/Profile`}>
+      <button>
       <img src={character.avatarUrl} alt={character.name} className=" object-cover mb-2 rounded-3xl" />
       <h3 className="text-lg text-center font-semibold">{character.name}</h3>
       
@@ -44,6 +46,7 @@ function CharacterCard({ character }) {
       )}
 
       </button>
+      </Link>
     </div>
   );
 }

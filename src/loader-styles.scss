@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+$namespace: loadingbar;
+$loading-img-height: 62.5px !default;
+$loading-img-width: 500px !default;
+$mobile: 719px !default;
+$animation: loading-bar 3.5s cubic-bezier(0.28, 0.11, 0.32, 1) infinite forwards !default;
+
+:root {
+  --#{$namespace}-background-color: #fff7ed;
+  --#{$namespace}-prospect-color: #666666;
+}
+
+html.dark {
+  --#{$namespace}-background-color: #2c2b30;
+  --#{$namespace}-prospect-color: #ece5d8;
+}
+
+html.dark body {
+  background-color: #161d22;
+
+}
+
+body {
+  background-color: rgb(255, 247, 237);
+}
+
+@mixin img-color($color, $top: 500px) {
+  position: absolute;
+  top: $top;
+  left: 0;
+  filter: drop-shadow(0 #{-$top} 0 $color);
+}
+
+// .loading-bar {
+//   position: absolute;
+//   background-color: rgb(255, 247, 237);
+//   top: 50%;
+//   left: 50%;
+//   width: $loading-img-width;
+//   height: $loading-img-height;
+//   transform: translate(-50%, -50%) scale(0.8);
+//   transition: all 0.5s;
+//   user-select: none;
+//   overflow: hidden;
+
+//   img {
+//     @include img-color(var(--#{$namespace}-background-color));
+//   }
+
+//   &::after {
+//     content: "";
+//     @include img-color(var(--#{$namespace}-prospect-color));
+//     width: $loading-img-width;
+//     height: $loading-img-height;
+//     background: url("https://yuanshen.site/imgs/loading-bar.png") no-repeat left
+//       100%;
+//     background-size: $loading-img-width $loading-img-height;
+//     background-position-x: 0;
+//     animation: $animation;
+//   }
+
+.loading-bar {
+  position: absolute;
+  background-color: rgb(255, 247, 237);
+  top: 50%;
+  left: 50%;
+  width: $loading-img-width;
+  height: $loading-img-height;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: all 0.5s;
+  user-select: none;
+  overflow: hidden;
+
+  img {
+    @include img-color(var(--#{$namespace}-background-color));
+  }
+
+  &::after {
+    content: "";
+    @include img-color(var(--#{$namespace}-prospect-color));
+    width: $loading-img-width;
+    height: $loading-img-height;
+    background: url("https://yuanshen.site/imgs/loading-bar.png") no-repeat left 100%;
+    background-size: $loading-img-width $loading-img-height;
+    background-position-x: 0;
+    animation: loading-bar 0.075s cubic-bezier(0.28, 0.11, 0.32, 1) forwards; /* Updated animation */
+  }
+
+
+
+  @media screen and (max-width: $mobile) {
+    // Hide when vertical screen
+    .loading-bar {
+      display: none;
+    }
+    // Horizontal when screen display
+    @media screen and (orientation: landscape) {
+      .loading-bar {
+        display: block !important;
+        transform: translate(-50%, -50%) scale(0.7) !important;
+      }
+    }
+  }
+}
+
+@supports not (filter: drop-shadow(0 0 0 #fff)) {
+  // If the browser does not support Filter
+  .loading-bar:before {
+    content: "Your browser does not support the animation";
+  }
+}
+
+@keyframes loading-bar {
+  0% {
+    width: 0;
+    background-size: $loading-img-width $loading-img-height;
+  }
+
+  16.6% {
+  }
+
+  33.2% {
+  }
+
+  49.8% {
+  }
+
+  66.4% {
+  }
+
+  83% {
+  }
+
+  100% {
+    width: $loading-img-width;
+  }
+}
