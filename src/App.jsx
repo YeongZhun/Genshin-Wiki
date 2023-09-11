@@ -6,22 +6,33 @@ import SideBar from './components/SideBar';
 import CharacterGallery from './components/CharacterGallery';
 import { useState, useEffect } from 'react';
 import MainPage from './components/MainPage';
-import axios from 'axios';
+// import getCharacters from './server/BackendAPITest';
 
 function App() {
 
-  const [chars, setChars] = useState([]);
+  // const [chars, setChars] = useState([]);
 
-  useEffect(() => {
-    // Make an API request to fetch data from your backend
-    axios.get('http://localhost:3001/getCharacters') // Replace with your actual API endpoint
-      .then((response) => {
-        setChars(response.data); // Update state with the fetched data
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   // Make an API request to fetch data from your backend
+  //   axios.get('http://localhost:3001/getCharacters') // Replace with your actual API endpoint
+  //     .then((response) => {
+  //       setChars(response.data); // Update state with the fetched data
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching data:', error);
+  //     });
+  // }, []);
+
+  // const [characters, setCharacters] = useState([]);
+
+  // const fetchCharacters = async () => {
+  //   const characters = await getCharacters();
+  //   setCharacters(characters);
+  // };
+  
+  // useEffect(() => {
+  //   fetchCharacters();
+  // }, []);
 
 
 
@@ -55,6 +66,7 @@ function App() {
           <Route path="/" element = {
             <div className='flex-grow ml-40'>
             <MainPage />
+          
             <div></div>
             </div>
           }/>
