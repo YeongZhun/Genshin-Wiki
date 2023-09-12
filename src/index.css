@@ -56,3 +56,33 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 9999; /* Set a high z-index value */
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &.loading {
+    .loader {
+      /* Your loading animation styles */
+      /* ... */
+      z-index: 10000; /* Make sure the loader has an even higher z-index */
+    }
+  }
+}

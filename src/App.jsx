@@ -50,7 +50,7 @@ function App() {
     //       console.error(error);
     //       setIsLoading(false);
     //     });
-    // }, 250); // Adjust the duration as needed
+    // }, 7500); // Adjust the duration as needed
 
   }, [location.pathname]);
 

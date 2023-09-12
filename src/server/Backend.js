@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const { v4: uuidv4 } = require("uuid");
+const moment = require('moment');
 const cors = require("cors");
 const app = express();
 const port = 5000; // Choose a port for your server
@@ -80,6 +81,7 @@ const dataSchema = new Schema({
             text: String,
             dateTime: String,
             ipAddress: String,
+            isEditing: Boolean,
         },
     ],
 });
@@ -100,7 +102,7 @@ app.get("/api/data", async (req, res) => {
 
 app.post("/api/comments", async (req, res) => {
     try {
-        const { char_id, user, text, dateTime, ipAddress } = req.body;
+        const { char_id, user, text, dateTime, ipAddress, isEditing } = req.body;
         
 
         const newComment = {
@@ -108,6 +110,7 @@ app.post("/api/comments", async (req, res) => {
             text,
             dateTime,
             ipAddress,
+            isEditing,
         };
         console.log(char_id);
         console.log(user);
@@ -163,6 +166,51 @@ app.get("/api/getcomments/:_id", async (req, res) => {
 
         const comments = character.comments;
         res.json(comments);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+});
+
+app.put("/api/updatecomment/:commentId/:commentIpAddress", async (req, res) => {
+    try {
+        const { commentId, commentIpAddress } = req.params;
+        const { newText } = req.body;
+
+        // console.log('commentId', commentId)
+        // console.log('IP', commentIpAddress)
+        // console.log(newText)
+
+        const result = await Data.findOneAndUpdate(
+            {   //query conditions
+                'comments._id': commentId,
+                'comments.ipAddress': commentIpAddress,
+              },
+              { //the object to be updated (comment.text)
+                //$[elem] is a positional operator that allows you to update a specific element that matches the conditions defined in arrayFilters.
+                $set: {
+                  'comments.$[elem].text': newText,
+                  'comments.$[elem].dateTime': moment().format('DD/MM/YYYY hh:mm A'),
+                },
+              },
+              { //this tells mongoDB to return updated doc as the result. Without this, it would return the document as it was previously
+                new: true,
+                //this filters the elements within the comments array based on the conditions below
+                //to ensure even if there are multiple comments in the array with same _id and ipAddress we update the exact comment
+                arrayFilters: [
+                  {
+                    'elem._id': commentId,
+                    'elem.ipAddress': commentIpAddress,
+                  },
+                ],
+              }
+            );
+
+        if (!result) {
+            return res.status(404).json({ error: 'Comment not found or unauthorized.'})
+        }
+
+        res.status(200).json(result);
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Internal Server Error" });
