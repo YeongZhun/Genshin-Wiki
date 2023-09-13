@@ -10,7 +10,7 @@ export default defineConfig({
   define: {
     // 'process.env': process.env,
     // 'VITE_BACKEND_URL': process.env.VITE_BACKEND_URL,
-    __VALUE__: `"${process.env.VALUE}"` // wrapping in "" since it's a string
+    // __VALUE__: `"${process.env.VALUE}"` // wrapping in "" since it's a string
   }
 })
 
