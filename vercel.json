@@ -6,11 +6,11 @@
     "routes": [
       {
         "src": "/api/.*",
-        "dest": "/api/index.js"
+        "dest": "/api/App.jsx"
       },
       {
         "src": "/(.*)",
-        "dest": "/$1"
+        "dest": "/index.html"
       }
     ]
 }

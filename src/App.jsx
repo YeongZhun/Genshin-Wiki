@@ -29,7 +29,7 @@ function App() {
     setIsLoading(true);
 
     axios
-      .get(`${backendURL}/api/data/`)
+      .get(`${backendURL}/api/data`)
       .then((response) => {
         setChars(response.data);
         setIsLoading(false);
