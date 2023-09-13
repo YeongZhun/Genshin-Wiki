@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   define: {
     'process.env': process.env,
-    VITE_BACKEND_URL: process.env.VITE_BACKEND_URL,
+    'VITE_BACKEND_URL': process.env.VITE_BACKEND_URL,
   }
 })
