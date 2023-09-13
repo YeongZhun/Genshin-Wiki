@@ -84,7 +84,7 @@ const dataSchema = new Schema({
             isEditing: Boolean,
         },
     ],
-});
+}, { collection: "Genshin-Wiki" });
 
 const Data = mongoose.model("Characters", dataSchema, "Characters");
 
