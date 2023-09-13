@@ -6,7 +6,7 @@ const { v4: uuidv4 } = require("uuid");
 const moment = require('moment');
 const cors = require("cors");
 const app = express();
-const port = 5000; // Choose a port for your server
+const port = process.env.PORT || 5000; // Choose a port for your server
 require("dotenv").config();
 
 app.use(cors());

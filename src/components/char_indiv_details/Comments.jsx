@@ -26,6 +26,8 @@ function Comments({ character }) {
 
   const blockedWords = ['celestia', 'sus', 'scaramouche', 'deshret', 'fuck', 'cock', 'pussy', 'suck', 'mum', 'mom', 'god', 'paimon'];
 
+  const backendURL = import.meta.env.VITE_BACKEND_URL
+
   //GET existing comments or new comments every time it is added
   useEffect(() => {
 
@@ -48,7 +50,7 @@ function Comments({ character }) {
 
         if (!isCommentsFetched) {
           await axios
-            .get(`http://localhost:5000/api/getcomments/${character._id}`)
+            .get(`${backendURL}/api/getcomments/${character._id}`)
             .then((response) => {
 
 
@@ -86,7 +88,7 @@ function Comments({ character }) {
       const formattedDate = `${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()} ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
       const commentId = uuidv4();
 
-      const response = await axios.post(`http://localhost:5000/api/comments`, {
+      const response = await axios.post(`${backendURL}/api/comments`, {
         char_id: character._id,
         commentId,
         user: commentUserName,
@@ -121,7 +123,7 @@ function Comments({ character }) {
 
   const handleCommentDelete = async (commentId, userIpAddress) => {
     try {
-      await axios.delete(`http://localhost:5000/api/deletecomment/${commentId}/${userIpAddress}`);
+      await axios.delete(`${backendURL}/api/deletecomment/${commentId}/${userIpAddress}`);
       setComments((prevComments) => prevComments.filter((comment) => comment._id !== commentId));
     } catch (error) {
       console.error('Error deleting comments:', error);
@@ -162,7 +164,7 @@ function Comments({ character }) {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/updatecomment/${comment._id}/${userIpAddress}`,
+        `${backendURL}/api/updatecomment/${comment._id}/${userIpAddress}`,
         {
           newText: comment.updatedText,
           ipAddress: userIpAddress,
