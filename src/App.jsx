@@ -15,8 +15,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
-  // const backendURL = import.meta.env.VITE_BACKEND_URL
-  const backendURL = process.env.BACKEND_URL
+  const backendURL = import.meta.env.VITE_BACKEND_URL
+
 
   const [chars, setChars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -29,7 +29,7 @@ function App() {
     setIsLoading(true);
 
     axios
-      .get(`${backendURL}/api/data`)
+      .get(`${backendURL}/api/data/`)
       .then((response) => {
         setChars(response.data);
         setIsLoading(false);

@@ -95,7 +95,7 @@ const dataSchema = new Schema({
 const Data = mongoose.model("Characters", dataSchema, "Characters");
 
 // Define your API routes
-app.get("/api/data", async (req, res) => {
+app.get("/api/data/", async (req, res) => {
     try {
         const data = await Data.find();
         res.json(data);
