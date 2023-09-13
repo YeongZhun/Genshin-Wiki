@@ -28,7 +28,7 @@ app.use("/api/comments", limiter);
 
 
 // Connect to MongoDB
-mongoose.connect(mongodb+srv://fallenkuma:QuaidECb6LsEcVPc@genshin-wiki.j6hh6qv.mongodb.net/Genshin-Wiki?retryWrites=true&w=majority, {
+mongoose.connect(mongodb+srv://fallenkuma:QuaidECb6LsEcVPc@genshin-wiki.j6hh6qv.mongodb.net/Genshin-Wiki, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
