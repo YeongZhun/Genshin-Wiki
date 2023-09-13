@@ -26,7 +26,7 @@ function Comments({ character }) {
 
   const blockedWords = ['celestia', 'sus', 'scaramouche', 'deshret', 'fuck', 'cock', 'pussy', 'suck', 'mum', 'mom', 'god', 'paimon'];
 
-  const backendURL = import.meta.env.VITE_BACKEND_URL
+  const backendURL = process.env.VITE_BACKEND_URL
 
   //GET existing comments or new comments every time it is added
   useEffect(() => {
