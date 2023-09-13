@@ -25,3 +25,4 @@ dist-ssr
 
 #Environment Variabels
 .env
+.vercel
