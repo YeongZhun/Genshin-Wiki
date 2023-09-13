@@ -28,7 +28,7 @@ app.use("/api/comments", limiter);
 
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://fallenkuma:QuaidECb6LsEcVPc@genshin-wiki.j6hh6qv.mongodb.net/Genshin-Wiki", {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
