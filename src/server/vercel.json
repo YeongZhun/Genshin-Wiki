@@ -8,15 +8,8 @@
   ],
   "routes": [
     {
-      "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
-    }
-  ],
-  
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/Backend.js"
     }
   ]
-
 }
