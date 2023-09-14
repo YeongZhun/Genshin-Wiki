@@ -24,7 +24,8 @@ function Comments({ character }) {
   const [editingCommentId, setEditingCommentId] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
 
-  const blockedWords = ['celestia', 'sus', 'scaramouche', 'deshret', 'fuck', 'cock', 'pussy', 'suck', 'mum', 'mom', 'god', 'paimon'];
+
+  const blockedWords = import.meta.env.VITE_blockedWords
 
   const backendURL = import.meta.env.VITE_BACKEND_URL
 
@@ -141,14 +142,28 @@ function Comments({ character }) {
   // };
 
   const handleCommentEdit = (commentId) => {
+    const updatedComments = comments.map((comment) => {
+      if (comment._id === commentId) {
+        // Initialize comment.updatedText with comment.text
+        return { ...comment, updatedText: comment.text };
+      }
+      return comment;
+    });
+    setComments(updatedComments);
     setEditingCommentId(commentId);
     setIsEditing(true);
   };
 
 
-
   const handleUpdateComment = async (comment) => {
     // console.log('Before update:', comment);
+
+ // Check if comment.updatedText is empty and handle it accordingly
+  if (!comment.updatedText.trim()) {
+    // Handle the case where the textarea is empty
+    // Here, im returning without updating
+    return;
+  }
 
     for (const blockedWord of blockedWords) {
       if (comment.updatedText.toLowerCase().includes(blockedWord)) {
@@ -190,7 +205,6 @@ function Comments({ character }) {
     }
   };
 
-
   //This is for the comment box to adjust its height after a new line has been added (alt+enter)
   const handleInputHeight = (event) => {
     const target = event.target;
@@ -198,12 +212,13 @@ function Comments({ character }) {
     target.style.height = `${target.scrollHeight}px`;
   };
 
-  //This is to handle multiple lines comment (alt+enter) by converting them into \n to be displayed as newlines
+  // This is to handle multiple lines comment (alt+enter) by converting them into \n to be displayed as newlines
   const handleInputContent = (event) => {
     const target = event.target;
-    //regex, / signals the start and end of regex. /g means global, not just the first word.
+    // regex, / signals the start and end of regex. /g means global, not just the first word.
     const content = target.innerHTML.replace(/<div><br><\/div>/g, '\n');
-    setNewComment(content);
+    // Check if the content is empty or just a single <br> tag and set it to empty string
+    setNewComment(content.trim() === '' || content.trim() === '<br>' ? '' : content);
   };
 
 
@@ -211,13 +226,14 @@ function Comments({ character }) {
     <div>
       <h2 className='text-gray-800 font-bold text-3xl mb-5'>Comment on what you like about the character!</h2>
 
-      <div className='bg-orange-75 rounded-t-2xl shadow-lg comments-lg:w-250 comments-md:w-150 comments-sm:w-80 h-200 comments-sm:h-150 '>
+      <div className='bg-orange-75 rounded-t-2xl shadow-lg comments-lg:w-250 comments-md:w-150 comments-sm:w-150 h-200 comments-sm:h-150 '>
         <div className='p-8 flex flex-col-reverse h-full'>
           <div className='overflow-y-auto flex-grow'>
             <ul className='flex flex-col gap-5'>
+
               {comments.map((comment) => (
                 <div className='my-3' key={comment._id}>
-                  <div className='flex mb-1.5 mx-5'>
+                  <div className='flex mb-1.5 mx-5 comments-sm:flex-col'>
                     <li className='text-orange-400 text-lg font-bold font-gray-800'>
                       {comment.user}
                     </li>
@@ -228,18 +244,34 @@ function Comments({ character }) {
                   {editingCommentId === comment._id ? (
                     <div>
                       <textarea
-                        value={comment.updatedText}
+                        value={comment.updatedText || comment.text}
                         onChange={(e) => {
                           // Update the updatedText property in the comment object
-                          comment.updatedText = e.target.value;
+                          const updatedComments = comments.map((c) => {
+                            if (c._id === comment._id) {
+                              return { ...c, updatedText: e.target.value };
+                            }
+                            return c;
+                          });
+                          setComments(updatedComments);
                         }}
+                        style={{ width: '300px', height: '100px', resize: 'none' }}
+                        className='rounded -my-1.5'
                       />
-                      <button
-                        onClick={() => handleUpdateComment(comment)}
-                        className='bg-blue-500 text-white rounded px-2 py-1'
-                      >
-                        Update
-                      </button>
+                      <div className='my-1.5'>
+                        <button onClick={() => setEditingCommentId(null)} className='text-white rounded px-2 bg-red-400'>
+                          X
+                        </button>
+                        <button
+                          onClick={() => {
+                            handleUpdateComment(comment);
+                            setEditingCommentId(null); // Exit edit mode
+                          }}
+                          className='bg-blue-500 text-white rounded px-2 mx-1 '
+                        >
+                          Update
+                        </button>
+                      </div>
                     </div>
                   ) : (
 
@@ -273,7 +305,7 @@ function Comments({ character }) {
         </div>
       </div>
 
-      <div className='bg-orange-100 rounded-b-2xl shadow-lg p-4 comments-lg:w-250 comments-md:w-150 comments-sm:w-80 border-t-2 border-gray-300'>
+      <div className='bg-orange-100 rounded-b-2xl shadow-lg p-4 comments-lg:w-250 comments-md:w-150 comments-sm:w-150 border-t-2 border-gray-300'>
         <form onSubmit={handleCommentSubmit}>
           <div className="flex flex-col ">
             <div className="flex  w-80  comments-sm:w-48 mb-4">

@@ -9,5 +9,6 @@ export default defineConfig({
     MONGODB_URI: process.env.MONGODB_URI,
     PORT: process.env.PORT,
     VITE_BACKEND_API: process.env.VITE_BACKEND_API,
+    VITE_blockedWords: process.env.VITE_blockedWords,
   },
 })

@@ -12,7 +12,7 @@ function CharacterCard({ character }) {
       hover:scale-110 hover:border-4 hover:border-orange-300 border border-orange-200">
       <Link to={`/characters/${character.name}/Profile`}>
       <button>
-      <img src={character.avatarUrl} alt={character.name} className=" object-cover mb-2 rounded-3xl" />
+      <img src={character.avatarUrl} alt={character.name} className=" object-cover mb-2 rounded-lg" />
       <h3 className="text-lg text-center font-semibold">{character.name}</h3>
       
       {/* conditional rendering to display 4 or 5 stars */}

@@ -117,7 +117,9 @@ export default {
 
             "comments-md": {min: "1260px", max: "1584px"},
 
-            "comments-sm": {max: "1259px"},
+            "comments-sm": {min: "750px", max: "1259px"},
+
+            "comments-ssm": {max: "749px"},
         },
         // minWidth: {
         //     custom: "320px",
