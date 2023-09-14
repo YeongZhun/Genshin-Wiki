@@ -9,13 +9,25 @@ const app = express();
 const port = process.env.PORT || 5000; // Choose a port for your server
 require("dotenv").config();
 
-app.use(cors(
-    // {
-    //     origin: ["genshin-wiki-draft-4o5bd13r4-yeongzhun.vercel.app"],
-    //     methods: ["GET", "POST", "PUT", "DELETE"],
-    //     credentials: true
-    // }
-));
+const options = [
+    cors({
+      origin: '*',
+      methods: '*',
+      allowedHeaders: ['Content-Type', 'Authorization'],
+      credentials: true,
+    })
+  ];
+
+// app.use(cors(
+//     // {
+//     //     origin: ["genshin-wiki-draft-4o5bd13r4-yeongzhun.vercel.app"],
+//     //     methods: ["GET", "POST", "PUT", "DELETE"],
+//     //     credentials: true
+//     // }
+// ));
+
+app.use(options);
+
 app.use(bodyParser.json());
 
 //For limiting of comments section post
