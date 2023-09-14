@@ -16,7 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
-  const backendURL = import.meta.env.VITE_BACKEND_URL
+  const backendURL = 'https://genshin-wiki-final.vercel.app/'
 
 
   const [chars, setChars] = useState([]);
