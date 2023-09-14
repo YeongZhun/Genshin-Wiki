@@ -7,7 +7,7 @@ import CharacterGallery from './components/CharacterGallery';
 import { useState, useEffect } from 'react';
 import MainPage from './components/MainPage';
 import axios from 'axios'
-import CharacterIndivDetails from './components/char_indiv_details/CharacterIndivDetails';
+import CharacterIndivDetails from '../frontend/components/char_indiv_details/CharacterIndivDetails';
 import LoadingScreen from './components/LoadingScreen';
 
 import { ToastContainer } from 'react-toastify';
