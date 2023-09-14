@@ -43,8 +43,6 @@ const limiter = rateLimit({
 // Apply the rate limiter to the comment endpoint
 app.use("/api/comments", limiter);
 
-
-
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
