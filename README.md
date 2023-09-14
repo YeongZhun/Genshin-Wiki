@@ -35,7 +35,7 @@ Overall, for a small project I am happy how it turned out, having learnt a lot a
 
 
 <br>
-**Contributions and feedback are welcome! Feel free to open issues or submit pull requests to help enhance this project.** <br>
+Contributions and feedback are welcome! Feel free to open issues or submit pull requests to help enhance this project. <br>
 <br>
 
   
