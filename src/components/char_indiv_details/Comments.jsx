@@ -25,7 +25,7 @@ function Comments({ character }) {
   const [isEditing, setIsEditing] = useState(false);
 
 
-  const blockedWords = import.meta.env.VITE_blockedWords
+  const blockedWords = import.meta.env.VITE_blockedWords.split(',');
 
   const backendURL = import.meta.env.VITE_BACKEND_URL
 
