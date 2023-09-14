@@ -1,12 +1,17 @@
 {
-    "version":2,
-    "builds": [
-      { "src": "*.js", "use": "@vercel/node"}
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/"
-      }
-    ]
+  "version": 2,
+  "builds": [
+    { "src": "src/**/*", "use": "@vercel/static" }, // Serve your frontend assets
+    { "src": "api/**/*.js", "use": "@vercel/node" }     // Handle serverless functions
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",   // Route API requests
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",       // Route other requests to your React app
+      "dest": "/"
+    }
+  ]
 }

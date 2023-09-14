@@ -13,6 +13,7 @@ import LoadingScreen from './components/LoadingScreen';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 function App() {
 
   const backendURL = import.meta.env.VITE_BACKEND_URL
