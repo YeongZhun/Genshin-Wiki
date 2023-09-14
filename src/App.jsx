@@ -17,12 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   //Read that it is unsafe, but for testing purposes first
   const backendURL = import.meta.env.VITE_BACKEND_URL
-  console.log(backendURL)
-
-  const backendURL2 = process.env.VITE_BACKEND_URL
-  console.log(backendURL2)
   
-
   const [chars, setChars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
