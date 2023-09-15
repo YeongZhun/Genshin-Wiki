@@ -244,7 +244,7 @@ function Comments({ character }) {
                   {editingCommentId === comment._id ? (
                     <div>
                       <textarea
-                        value={comment.updatedText || comment.text}
+                        value={comment.updatedText || ''}
                         onChange={(e) => {
                           // Update the updatedText property in the comment object
                           const updatedComments = comments.map((c) => {
