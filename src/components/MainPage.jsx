@@ -61,12 +61,34 @@ function MainPage() {
 
   return (
     <div className='flex flex-col min-h-screen'>
-      <div className='container  p-8 min-h-full min-w-full flex-grow'>
-        <div className='flex items-center gap-4'>
-          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693719993/RilakummaFlipped.png" className='w-12 mb-8' />
-          <h1 className="text-5xl font-semibold mb-4 text-amber-500 mainpage-md:whitespace-nowrap mainpage-sm:text-center">Project Fallen</h1>
+      <div className='container  pl-8 pr-8 pb-8 pt-4 min-h-full min-w-full flex-grow'>
+        <div className='flex flex-col gap-2'>
+          <div className='flex items-center'>
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694877738/wh7hmaqnvpraotfdt8ur.webp" className='mainpage-md:w-28 mainpage-header-md:w-24' />
+          <h1 className="text-6xl mainpage-header-md:text-5xl font-extrabold text-orange-300 mainpage-md:whitespace-nowrap mainpage-sm:text-center">Project Fallen</h1>
 
-          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693719633/Rilakumma.png" className='w-12 mb-8' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694877737/owny6ex2sdp974a4tprg.webp" className='mainpage-md:w-32 mainpage-header-md:w-28' />
+          </div>
+
+          <div className='flex mb-4 -mt-4 flex-wrap'>
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/kekadrvxyai6mre3enrz.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/spw1ufvk38nrn68nbzel.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/kekadrvxyai6mre3enrz.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/spw1ufvk38nrn68nbzel.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/kekadrvxyai6mre3enrz.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/spw1ufvk38nrn68nbzel.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/kekadrvxyai6mre3enrz.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/spw1ufvk38nrn68nbzel.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/kekadrvxyai6mre3enrz.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/spw1ufvk38nrn68nbzel.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/kekadrvxyai6mre3enrz.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/spw1ufvk38nrn68nbzel.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/kekadrvxyai6mre3enrz.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/spw1ufvk38nrn68nbzel.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/kekadrvxyai6mre3enrz.webp" className='w-10 ' />
+          <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/spw1ufvk38nrn68nbzel.webp" className='w-10 ' />
+          </div>
+          
         </div>
         <p className='font-semibold'>An ongoing project to compile your journey in the Genshin Impact world!</p>
         <br />

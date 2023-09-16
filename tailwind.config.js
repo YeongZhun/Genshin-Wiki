@@ -122,6 +122,10 @@ export default {
 
             "mainpage-sm": {max: "689px"},
 
+            "mainpage-header-lg": {min: "760px"},
+
+            "mainpage-header-md": {max: "759px"},
+
             "mainpage-image-md": {min: "725px"},
 
             "mainpage-image-sm": {min:"631px", max: "724px"},
