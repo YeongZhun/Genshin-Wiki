@@ -64,7 +64,7 @@ function MainPage() {
       <div className='container  p-8 min-h-full min-w-full flex-grow'>
         <div className='flex items-center gap-4'>
           <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693719993/RilakummaFlipped.png" className='w-12 mb-8' />
-          <h1 className="text-5xl font-semibold mb-4 text-amber-500 mainpage-md:whitespace-nowrap mainpage-sm:text-center">Project Fallen Kuma</h1>
+          <h1 className="text-5xl font-semibold mb-4 text-amber-500 mainpage-md:whitespace-nowrap mainpage-sm:text-center">Project Fallen</h1>
 
           <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693719633/Rilakumma.png" className='w-12 mb-8' />
         </div>

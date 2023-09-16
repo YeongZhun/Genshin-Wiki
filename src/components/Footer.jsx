@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <div className='bottom-0 w-full  bg-orange-100 p-2 footer-lg:h-20 footer-md:h-32 footer-sm:h-64 flex flex-row items-center'>
+    <div className='bottom-0 w-full  bg-orange-100 p-2 footer-lg:h-20 footer-md:h-32 footer-sm:h-44 flex flex-row items-center'>
       <div className='font-medium text-base p-1'>
-      <p>This project is for me to gain familiarity with the MERN stack, and references Project Amber for the UI design, all credits to them.</p>
+      <p>This project references Project Amber for the UI design, all credits to them.</p>
       <p>This website is not affliated or related to HoYoverse/miHoYo, and all assets used are property of their original owners.</p>
       </div>
 

@@ -3,6 +3,12 @@ export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
         extend: {
+            backgroundColor: {
+                'darker-purple': '#624e80',
+                'lighter-purple': '#8d6cad',
+                'darker-brown': '#7b5437',
+                'lighter-brown': '#bd7726'
+            },
             backgroundImage: {
                 // 'genshin': 'url(https://i.ibb.co/f4s5jhM/genshin-impact-scenery-uhdpaper-com-4-K-3-2969.jpg)',
                 // 'genshin': 'url(https://i.ibb.co/Q8339L6/genshin-impact-scenery-uhdpaper-com-hd-3-2969.jpg)',
@@ -43,6 +49,11 @@ export default {
                 orange: {
                     75: "#FFF2E1",
                 },
+                'darker-purple': '#745e95',
+                'lighter-purple': '#B57CB3',
+                'darker-brown': '#b47324',
+                'lighter-brown': '#e89c38',
+                'biege': '#e9e5dc',
             },
         },
         screens: {
@@ -68,6 +79,8 @@ export default {
             "4xl": { min: "2304px", max: "2559px" },
 
             "5xl": { min: "2560px" },
+
+            "char-gallery-sm": { max: "535px"},
 
             "char-md": { min: "1251px" },
 
@@ -101,7 +114,9 @@ export default {
 
             "footer-md": { min: "700px", max: "1170px" },
 
-            "footer-sm": { max: "699px"},
+            "footer-sm": { min: "615px", max: "699px"},
+
+            "footer-ssm": {max: "614px"},
 
             "mainpage-md": {min: "690px"},
 
