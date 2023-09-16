@@ -12,7 +12,7 @@ function CharacterCard({ character }) {
       hover:scale-110 hover:border hover:border-orange-400 border border-orange-200 ${rarityColor} overflow-hidden`}>
       <Link to={`/characters/${character.name}/Profile`}>
         <div className="absolute top-2 left-2">
-          <img src={character.elementUrl} alt="Element" className="w-10 h-10" />
+          <img src={character.elementUrl} alt="Element" className="w-12 h-12" />
         </div>
         <div className=''>
           <button>
