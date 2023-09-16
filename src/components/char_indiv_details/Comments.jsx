@@ -23,6 +23,7 @@ function Comments({ character }) {
 
   const [editingCommentId, setEditingCommentId] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
+  const [commentHeight, setCommentHeight] = useState(0);
 
 
   const blockedWords = import.meta.env.VITE_blockedWords.split(',');
@@ -149,6 +150,15 @@ function Comments({ character }) {
       }
       return comment;
     });
+
+    // Calculate the height of the comment element
+    const commentElement = document.getElementById(`comment-${commentId}`);
+    if (commentElement) {
+      const commentHeight = commentElement.getBoundingClientRect().height;
+      // Now we have the height of the comment, we can use it to set the textarea height
+      setCommentHeight(commentHeight); // We would need to add commentHeight to your state
+    }
+
     setComments(updatedComments);
     setEditingCommentId(commentId);
     setIsEditing(true);
@@ -158,12 +168,12 @@ function Comments({ character }) {
   const handleUpdateComment = async (comment) => {
     // console.log('Before update:', comment);
 
- // Check if comment.updatedText is empty and handle it accordingly
-  if (!comment.updatedText.trim()) {
-    // Handle the case where the textarea is empty
-    // Here, im returning without updating
-    return;
-  }
+    // Check if comment.updatedText is empty and handle it accordingly
+    if (!comment.updatedText.trim()) {
+      // Handle the case where the textarea is empty
+      // Here, im returning without updating
+      return;
+    }
 
     for (const blockedWord of blockedWords) {
       if (comment.updatedText.toLowerCase().includes(blockedWord)) {
@@ -232,7 +242,7 @@ function Comments({ character }) {
             <ul className='flex flex-col gap-5'>
 
               {comments.map((comment) => (
-                <div className='my-3' key={comment._id}>
+                <div className='my-3' key={comment._id} id={`comment-${comment._id}`}>
                   <div className='flex mb-1.5 mx-5 comments-sm:flex-col'>
                     <li className='text-orange-400 text-lg font-bold font-gray-800'>
                       {comment.user}
@@ -255,7 +265,7 @@ function Comments({ character }) {
                           });
                           setComments(updatedComments);
                         }}
-                        style={{ width: '300px', height: '100px', resize: 'none' }}
+                        style={{ width: '100%', maxWidth: '900px', height: `${commentHeight}px`, resize: 'none' }}
                         className='rounded -my-1.5'
                       />
                       <div className='my-1.5'>

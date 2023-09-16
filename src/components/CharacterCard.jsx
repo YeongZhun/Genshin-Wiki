@@ -14,7 +14,7 @@ function CharacterCard({ character }) {
         <div className="absolute top-2 left-2">
           <img src={character.elementUrl} alt="Element" className="w-10 h-10" />
         </div>
-        <div className='p-2'>
+        <div className=''>
           <button>
             <img src={character.avatarUrl} alt={character.name} className="object-cover rounded-3xl" />
           </button>
