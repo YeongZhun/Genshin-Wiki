@@ -8,7 +8,7 @@ function CharacterCard({ character }) {
     'bg-gradient-to-br from-darker-brown/70 from-35%  via-lighter-brown/60 via-95% to-lighter-brown/60';
 
   return (
-    <div className={`shadow-md rounded-3xl w-44 relative
+    <div className={`shadow-md rounded-3xl w-44 relative h-56
       hover:scale-110 hover:border hover:border-orange-400 border border-orange-200 ${rarityColor} overflow-hidden`}>
       <Link to={`/characters/${character.name}/Profile`}>
         <div className="absolute top-2 left-2">

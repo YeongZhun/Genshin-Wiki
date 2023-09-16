@@ -94,7 +94,7 @@ function MainPage() {
         <br />
 
         <div className='w-2/3 relative ' >
-          <div className='image-container relative mainpage-image-md:w-150 mainpage-image-sm:w-120 mainpage-image-ssm:w-80'>
+          <div className='image-container relative mainpage-image-md:w-185 mainpage-image-sm:w-120 mainpage-image-ssm:w-80'>
             <img src={images[currentIndex]} className='rounded-md ' />
             <div className='radio-buttons-container absolute bottom-0 left-0 right-0 text-center'>
               {images.map((_, index) => (
@@ -111,7 +111,7 @@ function MainPage() {
               ))}
             </div>
           </div>
-          <p className='text-lg italic mainpage-image-md:w-150 mainpage-image-sm:w-80 mt-1'>"Osmanthus wine tastes the same as I remember... But where are those who share the memory?" - Zhongli</p>
+          <p className='text-lg italic mainpage-image-md:w-185 mainpage-image-sm:w-80 mt-1'>"Osmanthus wine tastes the same as I remember... But where are those who share the memory?" - Zhongli</p>
         </div>
 
 

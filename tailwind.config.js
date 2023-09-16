@@ -18,6 +18,11 @@ export default {
             width: {
                 250: "60rem",
                 200: "48rem",
+                190: "40rem",
+                185: "39.5rem",
+                180: "39rem",
+                170: "38rem",
+                160: "37rem",
                 150: "36rem",
                 140: "34rem",
                 130: "32rem",
@@ -118,17 +123,17 @@ export default {
 
             "footer-ssm": {max: "614px"},
 
-            "mainpage-md": {min: "690px"},
+            "mainpage-md": {min: "790px"},
 
-            "mainpage-sm": {max: "689px"},
+            "mainpage-sm": {max: "789px"},
 
             "mainpage-header-lg": {min: "760px"},
 
             "mainpage-header-md": {max: "759px"},
 
-            "mainpage-image-md": {min: "725px"},
+            "mainpage-image-md": {min: "791px"},
 
-            "mainpage-image-sm": {min:"631px", max: "724px"},
+            "mainpage-image-sm": {min:"631px", max: "790px"},
 
             "mainpage-image-ssm": {max: "630px"},
 
