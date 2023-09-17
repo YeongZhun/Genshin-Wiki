@@ -27,7 +27,7 @@ function Footer() {
       <div className='p-1'>
       <p className='font-semibold text-base'>My Github:</p>
       <div className='flex gap-2 justify-center'>
-      <Link to='https://github.com/YeongZhun'>
+      <Link to='https://github.com/YeongZhun/Genshin-Wiki'>
       <div><BsGithub size={30}/></div>
       </Link>
       </div>

@@ -45,6 +45,24 @@ function CharacterIndivDetails({ character }) {
 
   const itemCommentsSelected = isItemSelected === "Comments" ? 'bg-orange-200' : '';
 
+  let char_repr_text_size = '';
+  if (character.character_representation.length > 30) {
+    char_repr_text_size = 'text-xl';
+  } else {
+    char_repr_text_size = 'text-2xl';
+  }
+
+  // let textSizeClass = '';
+  // if (character.name.length > 10 && character.name.length <= 18) {
+  //   textSizeClass = 'text-base';
+  // } else if (character.name.length > 18 && character.name.length <= 20) {
+  //   textSizeClass = 'text-sm';
+  // } else if (character.name.length > 20) {
+  //   textSizeClass = 'text-xs';
+  // } else {
+  //   textSizeClass = 'text-2xl';
+  // }
+
   const bgStyle = {
     backgroundImage: `url(${character.splash_art})`,
   }
@@ -106,7 +124,7 @@ function CharacterIndivDetails({ character }) {
                             character.element === 'Geo' ? 'bg-yellow-600' :
                               ''
                 }`}>
-                <div className='flex gap-1  '>
+                <div className='flex gap-1 items-center '>
                   <img src={character.elementUrl}
                     className='w-11 h-11 ' />
                   <h1 className='font-extrabold text-5xl text-white'>{character.name}</h1>
@@ -115,7 +133,7 @@ function CharacterIndivDetails({ character }) {
               </div>
 
               <div className='rounded-b-2xl shadow-md border-gray-400 border-r-2 border-b-2 -ml-10 pl-22px py-1 w-120 bg-orange-75 char-sm:w-96 char-ssm:w-100'>
-                <p className={` font-bold text-2xl
+                <p className={` font-bold ${char_repr_text_size}
           ${character.element === 'Dendro' ? 'text-emerald-700' :
                     character.element === 'Pyro' ? 'text-red-500' :
                       character.element === 'Hydro' ? 'text-blue-500' :

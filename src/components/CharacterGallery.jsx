@@ -30,7 +30,7 @@ function CharacterGallery({ chars }) {
     <>
       <div className=' min-h-screen'>
         <div className="container  p-8 char-gallery-sm:p-2 char-gallery-sm:my-2 min-h-full min-w-full flex-grow  ">
-          <h1 className="text-5xl font-semibold mb-4 text-orange-400">Genshin Characters</h1>
+          <h1 className="text-6xl font-semibold mb-4 text-orange-400">Characters</h1>
           <div>
             <button className='p-3 flex rounded-md bg-orange-100/75 text-1xl font-bold text-center border border-orange-100
             hover:border-orange-300 ' onClick={() => setIsOpen(true)}>

@@ -7,6 +7,17 @@ function CharacterCard({ character }) {
   const rarityColor = character.rarity === '4' ? 'bg-gradient-to-br from-darker-purple/70 from-35%  via-lighter-purple/70 via-95% to-lighter-purple/60' :
     'bg-gradient-to-br from-darker-brown/70 from-35%  via-lighter-brown/60 via-95% to-lighter-brown/60';
 
+    let textSizeClass = '';
+    if (character.name.length > 10 && character.name.length <= 18) {
+      textSizeClass = 'text-base';
+    } else if (character.name.length > 18 && character.name.length <= 20) {
+      textSizeClass = 'text-sm';
+    } else if (character.name.length > 20) {
+      textSizeClass = 'text-xs';
+    } else {
+      textSizeClass = 'text-xl';
+    }
+
   return (
     <div className={`shadow-md rounded-3xl w-44 relative h-56
       hover:scale-110 hover:border hover:border-orange-400 border border-orange-200 ${rarityColor} overflow-hidden`}>
@@ -40,10 +51,12 @@ function CharacterCard({ character }) {
               </p>
             )}
           </div>
-          <div className='bg-biege -mt-3'>
-            <div className='-mb-1 pt-2.5 '>
-              <p className="text-2xl text-center font-bold text-gray-700">{character.name}</p>
+          <div className='bg-biege -mt-3 h-16 flex flex-col justify-center items-center'>
+            <div className='-mb-1 pt-2.5 whitespace-normal'>
+              <p className={` ${textSizeClass} text-center font-bold text-gray-700`}>{character.name}</p>
             </div>
+            
+            <div className='pb-1.5'>
             {character.element === 'Pyro' && (
               <p className="text-red-500 font-bold text-center">{character.element}</p>
             )}
@@ -65,6 +78,7 @@ function CharacterCard({ character }) {
             {character.element === 'Electro' && (
               <p className="text-purple-500 font-bold text-center">{character.element}</p>
             )}
+            </div>
           </div>
         </div>
       </Link>

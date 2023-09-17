@@ -84,7 +84,7 @@ body {
     background: url("https://yuanshen.site/imgs/loading-bar.png") no-repeat left 100%;
     background-size: $loading-img-width $loading-img-height;
     background-position-x: 0;
-    animation: loading-bar 0.075s cubic-bezier(0.28, 0.11, 0.32, 1) forwards; /* Updated animation */
+    animation: loading-bar 0.3s cubic-bezier(0.28, 0.11, 0.32, 1) forwards; /* Updated animation */
   }
 
 
