@@ -114,8 +114,8 @@ function CharacterIndivDetails({ character }) {
 
               </div>
 
-              <div className='rounded-b-2xl shadow-md border-gray-400 border-r-2 border-b-2 -ml-10 pl-24 py-1 w-120 bg-orange-75 char-sm:w-96 char-ssm:w-100'>
-                <p className={` font-bold text-lg
+              <div className='rounded-b-2xl shadow-md border-gray-400 border-r-2 border-b-2 -ml-10 pl-22px py-1 w-120 bg-orange-75 char-sm:w-96 char-ssm:w-100'>
+                <p className={` font-bold text-2xl
           ${character.element === 'Dendro' ? 'text-emerald-700' :
                     character.element === 'Pyro' ? 'text-red-500' :
                       character.element === 'Hydro' ? 'text-blue-500' :
@@ -147,25 +147,25 @@ function CharacterIndivDetails({ character }) {
             </div>
 
             <div className='mt-2 flex flex-col shadow-md rounded-2xl border-2 border-gray-400 p-2 w-102 ml-10 bg-orange-75 char-sm:w-80 char-sm:ml-6 char-ssm:w-80 char-ssm:ml-5'>
-              <Link to={`/characters/${encodeURIComponent(character.name)}/Profile`}>
+              <Link to={`/characters/${encodeURIComponent(character._id)}/Profile`}>
                 <div onClick={handleMouseClickProfile} className={`p-2 rounded-2xl ${itemProfileSelected} `}>
                   <button className='font-bold text-3xl text-gray-700'>Profile</button>
                 </div>
               </Link>
 
-              <Link to={`/characters/${encodeURIComponent(character.name)}/Talent`}>
+              <Link to={`/characters/${encodeURIComponent(character._id)}/Talent`}>
                 <div onClick={handleMouseClickTalent} className={`p-2 rounded-2xl ${itemTalentSelected} `}>
                   <button className='font-bold text-3xl text-gray-700'>Talent</button>
                 </div>
               </Link>
 
-              <Link to={`/characters/${encodeURIComponent(character.name)}/Constellation`}>
+              <Link to={`/characters/${encodeURIComponent(character._id)}/Constellation`}>
                 <div onClick={handleMouseClickConstellation} className={`p-2 rounded-2xl ${itemConstellationSelected} `}>
                   <button className='font-bold text-3xl text-gray-700'>Constellation</button>
                 </div>
               </Link>
 
-              <Link to={`/characters/${encodeURIComponent(character.name)}/Comments`}>
+              <Link to={`/characters/${encodeURIComponent(character._id)}/Comments`}>
                 <div onClick={handleMouseClickComments} className={`p-2 rounded-2xl ${itemCommentsSelected} `}>
                   <button className='font-bold text-3xl text-gray-700'>Comments</button>
                 </div>

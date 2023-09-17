@@ -10,13 +10,13 @@ function CharacterCard({ character }) {
   return (
     <div className={`shadow-md rounded-3xl w-44 relative h-56
       hover:scale-110 hover:border hover:border-orange-400 border border-orange-200 ${rarityColor} overflow-hidden`}>
-      <Link to={`/characters/${character.name}/Profile`}>
+      <Link to={`/characters/${character._id}/Profile`}>
         <div className="absolute top-2 left-2">
           <img src={character.elementUrl} alt="Element" className="w-12 h-12" />
         </div>
         <div className=''>
           <button>
-            <img src={character.avatarUrl} alt={character.name} className="object-cover rounded-3xl" />
+            <img src={character.avatarUrl} alt={character._id} className="object-cover rounded-3xl" />
           </button>
         </div>
         <div className=' -mt-9 z-10 relative'>

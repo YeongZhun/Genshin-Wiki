@@ -15,6 +15,10 @@ export default {
                 genshin: "url(https://images5.alphacoders.com/109/1099191.jpg)",
             },
 
+            padding: {
+                '22px': "5.5rem",
+            },
+
             width: {
                 250: "60rem",
                 200: "48rem",

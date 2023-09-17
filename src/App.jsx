@@ -110,7 +110,7 @@ function App() {
           {chars.map((character) => (
             <Route
               key={character._id}
-              path={`/characters/${encodeURIComponent(character.name)}/Profile`}
+              path={`/characters/${encodeURIComponent(character._id)}/Profile`}
               element={
                 <div className="flex-grow ml-20">
                   {isLoading ? (
@@ -129,7 +129,7 @@ function App() {
           {chars.map((character) => (
             <Route
               key={character._id}
-              path={`/characters/${encodeURIComponent(character.name)}/Talent`}
+              path={`/characters/${encodeURIComponent(character._id)}/Talent`}
               element={
                 <div className="flex-grow ml-20">
                   {/* {isLoading ? (
@@ -148,7 +148,7 @@ function App() {
           {chars.map((character) => (
             <Route
               key={character._id}
-              path={`/characters/${encodeURIComponent(character.name)}/Constellation`}
+              path={`/characters/${encodeURIComponent(character._id)}/Constellation`}
               element={
                 <div className="flex-grow ml-20">
                   {/* {isLoading ? (
@@ -167,7 +167,7 @@ function App() {
           {chars.map((character) => (
             <Route
               key={character._id}
-              path={`/characters/${encodeURIComponent(character.name)}/Comments`}
+              path={`/characters/${encodeURIComponent(character._id)}/Comments`}
               element={
                 <div className="flex-grow ml-20">
                   {isLoading ? (
