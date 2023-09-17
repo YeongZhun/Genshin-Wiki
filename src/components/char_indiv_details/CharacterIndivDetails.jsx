@@ -6,6 +6,7 @@ import Talents from './Talents'
 import Constellations from './Constellations'
 import Profile from './Profile'
 import Comments from './Comments'
+import { FaStar } from 'react-icons/fa';
 
 function CharacterIndivDetails({ character }) {
 
@@ -125,10 +126,21 @@ function CharacterIndivDetails({ character }) {
                                 ''
                   }`}>{character.character_representation}</p>
                 {character.rarity === '4' && (
-                  <p className=''>⭐⭐⭐⭐</p>
+                  <p className='text-center text-yellow-400 flex drop-shadow-md '>
+                    <FaStar size={30} strokeWidth={10} stroke='orange' />
+                    <FaStar size={30} strokeWidth={10} stroke='orange' />
+                    <FaStar size={30} strokeWidth={10} stroke='orange' />
+                    <FaStar size={30} strokeWidth={10} stroke='orange' />
+                  </p>
                 )}
                 {character.rarity === '5' && (
-                  <p className=''>⭐⭐⭐⭐⭐</p>
+                  <p className='text-center text-yellow-400 flex drop-shadow-md '>
+                    <FaStar size={30} strokeWidth={10} stroke='orange' />
+                    <FaStar size={30} strokeWidth={10} stroke='orange' />
+                    <FaStar size={30} strokeWidth={10} stroke='orange' />
+                    <FaStar size={30} strokeWidth={10} stroke='orange' />
+                    <FaStar size={30} strokeWidth={10} stroke='orange' />
+                  </p>
                 )}
               </div>
 
