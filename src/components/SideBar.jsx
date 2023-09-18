@@ -46,8 +46,9 @@ function SideBar({ isHovered }) {
         <Link to='/characters'>
 
           <button className={` flex flex-col items-center py-2 ${isHovered ? 'w-64 hover:opacity-100' : ''} ${hoverClassCharBar} `}
-            onMouseEnter={handleMouseEnterCharacterBar} onMouseLeave={handleMouseLeaveCharacterBar}>
-            onTouchEnd={handleMouseLeaveCharacterBar}
+            onMouseEnter={handleMouseEnterCharacterBar} onMouseLeave={handleMouseLeaveCharacterBar} 
+            onTouchEnd={handleMouseLeaveCharacterBar}>
+            
             <BsPeopleFill size={36} />
             <p className={`opacity-0 font-bold text-1xl ${isHovered ? 'group-hover:opacity-100' : ''} `}>Characters</p>
           </button>
