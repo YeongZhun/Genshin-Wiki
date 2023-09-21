@@ -102,7 +102,7 @@ function App() {
                   <LoadingScreen isDarkMode={isDarkMode} />
                 </div>
               ) : (
-                <MainPage isDarkMode={isDarkMode} />
+                <MainPage isDarkMode={isDarkMode}  />
               )}
 
 
