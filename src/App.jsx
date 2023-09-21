@@ -88,7 +88,7 @@ function App() {
       <div className={`App ${isDarkMode ? 'bg-dark-mode-bg' : 'bg-orange-50'} bg-no-repeat bg-cover bg-center flex font-nunito`}>
 
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
-          className={`flex-none ${isDarkMode ? 'bg-slate-800 border-gray-500/70' : 'bg-orange-100 border-gray-300'} transform transition-transform duration-300 group border-r-2 z-30 ml-2
+          className={`flex-none ${isDarkMode ? 'bg-slate-800 border-gray-500/70' : 'bg-orange-100 border-gray-300'} transform transition-transform duration-300 group border-r-2 z-30 
              rounded-sm h-screen fixed ${isHovered ? ' w-64' : ''} `}>
           <SideBar isHovered={isHovered} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} toggleDarkMode={toggleDarkMode} />
         </div>

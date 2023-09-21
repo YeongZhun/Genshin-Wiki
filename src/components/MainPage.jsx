@@ -23,7 +23,8 @@ function MainPage({isDarkMode}) {
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342570/image-slider/Liyue.png",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342512/image-slider/Inazuma.jpg",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342508/image-slider/Sumeru.jpg",
-    "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342506/image-slider/Fontaine.webp"
+    "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342506/image-slider/Fontaine.webp",
+    "https://res.cloudinary.com/dv0cc527o/image/upload/v1695297849/GImontake/mbl9h7ixcaistoitq4hb.webp"
   ]
 
   // Define a ref to hold the interval ID for auto-sliding
@@ -87,6 +88,7 @@ function MainPage({isDarkMode}) {
           <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/spw1ufvk38nrn68nbzel.webp" className='w-10 ' />
           <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/kekadrvxyai6mre3enrz.webp" className='w-10 ' />
           <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/spw1ufvk38nrn68nbzel.webp" className='w-10 ' />
+          
           </div>
           
         </div>
