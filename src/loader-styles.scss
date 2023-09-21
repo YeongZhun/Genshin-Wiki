@@ -9,6 +9,7 @@ $animation: loading-bar 3.5s cubic-bezier(0.28, 0.11, 0.32, 1) infinite forwards
 :root {
   --#{$namespace}-background-color: #fff7ed;
   --#{$namespace}-prospect-color: #666666;
+  
 }
 
 html.dark {
@@ -18,7 +19,6 @@ html.dark {
 
 html.dark body {
   background-color: #161d22;
-
 }
 
 body {

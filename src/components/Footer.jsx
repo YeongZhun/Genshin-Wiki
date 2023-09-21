@@ -3,16 +3,16 @@ import {SiTailwindcss, SiReact} from 'react-icons/si'
 import { BsGithub } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
-function Footer() {
+function Footer({isDarkMode}) {
   return (
-    <div className='bottom-0 w-full  bg-orange-100 p-2 footer-lg:h-20 footer-md:h-32 footer-sm:h-44 flex flex-row items-center'>
-      <div className='font-medium text-base p-1'>
+    <div className={`bottom-0 w-full  ${isDarkMode ? 'bg-slate-800 border-gray-500/70' : 'bg-orange-100 border-gray-300'} p-4 footer-lg:h-20 footer-md:h-32 footer-sm:h-44 flex flex-row items-center border-t-2  `}>
+      <div className={`font-medium text-base p-1 ${isDarkMode ? 'text-white' : ''}`}>
       <p>This project references Project Amber for the UI design, all credits to them.</p>
       <p>This website is not affliated or related to HoYoverse/miHoYo, and all assets used are property of their original owners.</p>
       </div>
 
       <div className='flex-grow'></div>
-      <div className='p-1 mx-4'>
+      <div className={`p-1 mx-4 ${isDarkMode ? 'text-white' : ''}`}>
       <p className='font-semibold text-base'>Made with:</p>
       <div className='flex gap-2 justify-center'>
       <Link to='https://react.dev/'>
@@ -24,7 +24,7 @@ function Footer() {
       </div>
       </div>
 
-      <div className='p-1'>
+      <div className={`p-1 ${isDarkMode ? 'text-white' : ''}`}>
       <p className='font-semibold text-base'>My Github:</p>
       <div className='flex gap-2 justify-center'>
       <Link to='https://github.com/YeongZhun/Genshin-Wiki'>

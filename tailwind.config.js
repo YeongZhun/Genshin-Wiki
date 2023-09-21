@@ -67,7 +67,8 @@ export default {
                 'darker-brown': '#b47324',
                 'lighter-brown': '#e89c38',
                 'biege': '#e9e5dc',
-                'dark-mode-bg': '#121212'
+                'dark-mode-bg': '#29384e',
+                
             },
         },
         screens: {

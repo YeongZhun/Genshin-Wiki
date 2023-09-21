@@ -4,7 +4,7 @@ import ServerResetTimer1 from './ServerTimer'
 import { useState, useEffect, useRef } from 'react'
 
 
-function MainPage() {
+function MainPage({isDarkMode}) {
 
 
   const [selectedTimezone, setSelectedTimezone] = useState('Asia')
@@ -90,7 +90,7 @@ function MainPage() {
           </div>
           
         </div>
-        <p className='font-semibold'>An ongoing project to compile your journey in the Genshin Impact world!</p>
+        <p className={`font-semibold ${isDarkMode ? 'text-white' : ''}`}>An ongoing project to compile your journey in the Genshin Impact world!</p>
         <br />
 
         <div className='w-2/3 relative ' >
@@ -111,7 +111,7 @@ function MainPage() {
               ))}
             </div>
           </div>
-          <p className='text-lg italic mainpage-image-md:w-185 mainpage-image-sm:w-80 mt-1'>"Osmanthus wine tastes the same as I remember... But where are those who share the memory?" - Zhongli</p>
+          <p className={`text-lg italic mainpage-image-md:w-185 mainpage-image-sm:w-80 mt-1 ${isDarkMode ? 'text-white' : ''}`}>"Osmanthus wine tastes the same as I remember... But where are those who share the memory?" - Zhongli</p>
         </div>
 
 
@@ -138,7 +138,7 @@ function MainPage() {
         </div>
       </div>
       <div className='flex-none'>
-        <Footer />
+        <Footer isDarkMode={isDarkMode}/>
       </div>
     </div>
   )

@@ -6,7 +6,7 @@ import FilterModal from './FilterModal';
 import { RiFilterFill } from 'react-icons/ri';
 import Footer from './Footer';
 
-function CharacterGallery({ chars }) {
+function CharacterGallery({ chars, isDarkMode }) {
 
 
   const [filterRarity, setFilterRarity] = useState('');
@@ -30,10 +30,10 @@ function CharacterGallery({ chars }) {
     <>
       <div className=' min-h-screen'>
         <div className="container  p-8 char-gallery-sm:p-2 char-gallery-sm:my-2 min-h-full min-w-full flex-grow  ">
-          <h1 className="text-6xl font-semibold mb-4 text-orange-400">Characters</h1>
+          <h1 className={`text-6xl font-semibold mb-4 ${isDarkMode ? 'text-orange-200' : 'text-orange-300'} `}>Characters</h1>
           <div>
-            <button className='p-3 flex rounded-md bg-orange-100/75 text-1xl font-bold text-center border border-orange-100
-            hover:border-orange-300 ' onClick={() => setIsOpen(true)}>
+            <button className={`p-3 flex rounded-md ${isDarkMode ? 'bg-orange-100/80' : 'bg-orange-100'} text-1xl font-bold text-center border-2 border-orange-200
+            hover:border-orange-300 `} onClick={() => setIsOpen(true)}>
               <RiFilterFill size={25} />
               <span>Filter</span>
             </button>
@@ -43,11 +43,13 @@ function CharacterGallery({ chars }) {
               setFilterRarity={setFilterRarity}
               setFilterWeapon={setFilterWeapon}
               setFilterElement={setFilterElement}
+              isDarkMode={isDarkMode}
             />
           </div>
           <SearchBar
             searchTerm={searchTerm}
             onSearchChange={(e) => setSearchTerm(e.target.value)}
+            isDarkMode={isDarkMode}
           />
           <div className=' '>
             <div className="grid  ssm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6
@@ -61,7 +63,7 @@ function CharacterGallery({ chars }) {
 
       </div>
       <div className=''>
-        <Footer />
+        <Footer isDarkMode={isDarkMode} />
       </div>
     </>
   );

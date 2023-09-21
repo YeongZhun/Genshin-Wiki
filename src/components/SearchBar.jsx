@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SearchBar({ searchTerm, onSearchChange }) {
+function SearchBar({ searchTerm, onSearchChange, isDarkMode }) {
   return (
     <div className="mb-4">
       <input
@@ -8,7 +8,7 @@ function SearchBar({ searchTerm, onSearchChange }) {
         placeholder="Search characters..."
         value={searchTerm}
         onChange={onSearchChange}
-        className="w-60 px-4 py-2 border rounded-md bg-orange-100/75 mt-4"
+        className={`searchBar w-60 px-4 py-2 border rounded-md ${isDarkMode ? 'bg-orange-100/80' : 'bg-orange-100'} mt-4`}
       />
     </div>
   );

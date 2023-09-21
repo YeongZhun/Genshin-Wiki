@@ -20,7 +20,7 @@ function CharacterCard({ character }) {
 
   return (
     <div className={`shadow-md rounded-3xl w-44 relative h-56
-      hover:scale-110 hover:border hover:border-orange-400 border border-orange-200 ${rarityColor} overflow-hidden`}>
+      hover:scale-110 hover:border-4 hover:border-orange-400 border-2 border-orange-200 ${rarityColor} overflow-hidden`}>
       <Link to={`/characters/${character._id}/Profile`}>
         <div className="absolute top-2 left-2">
           <img src={character.elementUrl} alt="Element" className="w-12 h-12" />

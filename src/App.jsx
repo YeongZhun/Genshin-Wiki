@@ -17,10 +17,26 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   //Read that it is unsafe, but for testing purposes first
   const backendURL = import.meta.env.VITE_BACKEND_URL
-  
+
   const [chars, setChars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
+
+  const savedDarkMode = localStorage.getItem('darkMode');
+  const [isDarkMode, setIsDarkMode] = useState(savedDarkMode === 'true');
+
+  const toggleDarkMode = () => {
+    // Update the state
+    setIsDarkMode(!isDarkMode);
+  };
+
+  // Effect to save the dark mode preference to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('darkMode', isDarkMode);
+  }, [isDarkMode]);
+
+
+
   const location = useLocation();
   // const navigate = useNavigate();
 
@@ -69,12 +85,12 @@ function App() {
       <ToastContainer />
 
       {/* <div className="App bg-genshin bg-no-repeat bg-cover bg-center flex font-sans"> */}
-      <div className="App bg-orange-50 bg-no-repeat bg-cover bg-center flex font-nunito">
+      <div className={`App ${isDarkMode ? 'bg-dark-mode-bg' : 'bg-orange-50'} bg-no-repeat bg-cover bg-center flex font-nunito`}>
 
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
-          className={`flex-none bg-orange-100 transform transition-transform duration-300 group border-r-2 z-30
-            border-gray-300 rounded-sm h-screen fixed ${isHovered ? ' w-64' : ''} `}>
-          <SideBar isHovered={isHovered} />
+          className={`flex-none ${isDarkMode ? 'bg-slate-800 border-gray-500/70' : 'bg-orange-100 border-gray-300'} transform transition-transform duration-300 group border-r-2 z-30 ml-2
+             rounded-sm h-screen fixed ${isHovered ? ' w-64' : ''} `}>
+          <SideBar isHovered={isHovered} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} toggleDarkMode={toggleDarkMode} />
         </div>
 
 
@@ -83,10 +99,10 @@ function App() {
             <div className='flex-grow ml-20'>
               {isLoading ? (
                 <div className="loading-container">
-                  <LoadingScreen />
+                  <LoadingScreen isDarkMode={isDarkMode} />
                 </div>
               ) : (
-                <MainPage />
+                <MainPage isDarkMode={isDarkMode} />
               )}
 
 
@@ -98,10 +114,10 @@ function App() {
             <div className='flex-grow ml-20'>
               {isLoading ? (
                 <div className="loading-container">
-                  <LoadingScreen />
+                  <LoadingScreen isDarkMode={isDarkMode} />
                 </div>
               ) : (
-                <CharacterGallery chars={chars} />
+                <CharacterGallery chars={chars} isDarkMode={isDarkMode} />
               )}
 
             </div>
@@ -115,10 +131,10 @@ function App() {
                 <div className="flex-grow ml-20">
                   {isLoading ? (
                     <div className="loading-container">
-                      <LoadingScreen />
+                      <LoadingScreen isDarkMode={isDarkMode} />
                     </div>
                   ) : (
-                    <CharacterIndivDetails character={character} />
+                    <CharacterIndivDetails character={character} isDarkMode={isDarkMode} />
                   )}
 
                 </div>
@@ -134,12 +150,12 @@ function App() {
                 <div className="flex-grow ml-20">
                   {/* {isLoading ? (
                       <div className="loading-container">
-                        <LoadingScreen />
+                        <LoadingScreen isDarkMode={isDarkMode} />
                       </div>
                     ) : (
                       <CharacterIndivDetails character={character} />
                     )} */}
-                  <CharacterIndivDetails character={character} />
+                  <CharacterIndivDetails character={character} isDarkMode={isDarkMode} />
                 </div>
               }
             />
@@ -153,12 +169,12 @@ function App() {
                 <div className="flex-grow ml-20">
                   {/* {isLoading ? (
                       <div className="loading-container">
-                        <LoadingScreen />
+                        <LoadingScreen isDarkMode={isDarkMode} />
                       </div>
                     ) : (
                       <CharacterIndivDetails character={character} />
                     )} */}
-                  <CharacterIndivDetails character={character} />
+                  <CharacterIndivDetails character={character} isDarkMode={isDarkMode} />
                 </div>
               }
             />
@@ -171,12 +187,12 @@ function App() {
               element={
                 <div className="flex-grow ml-20">
                   {isLoading ? (
-                      <div className="loading-container">
-                        <LoadingScreen />
-                      </div>
-                    ) : (
-                      <CharacterIndivDetails character={character} />
-                    )}
+                    <div className="loading-container">
+                      <LoadingScreen isDarkMode={isDarkMode} />
+                    </div>
+                  ) : (
+                    <CharacterIndivDetails character={character} isDarkMode={isDarkMode} />
+                  )}
                   {/* <CharacterIndivDetails character={character} /> */}
                 </div>
               }

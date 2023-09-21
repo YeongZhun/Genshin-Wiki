@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 import { useState, useEffect } from 'react'
 
-function Comments({ character }) {
+function Comments({ character, isDarkMode }) {
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState('')
   const [isCommentsFetched, setIsCommentsFetched] = useState(false);
@@ -234,9 +234,9 @@ function Comments({ character }) {
 
   return (
     <div>
-      <h2 className='text-gray-800 font-bold text-3xl mb-5'>Comment on what you like about the character!</h2>
+      <h2 className={` ${isDarkMode ? 'text-amber-100' : 'text-gray-800'} font-bold text-3xl mb-5`}>Comment on what you like about the character!</h2>
 
-      <div className='bg-orange-75 rounded-t-2xl shadow-lg comments-lg:w-250 comments-md:w-150 comments-sm:w-150 h-200 comments-sm:h-150 '>
+      <div className={` ${isDarkMode ? 'bg-slate-600' : 'bg-orange-75'} rounded-t-2xl shadow-lg comments-lg:w-250 comments-md:w-150 comments-sm:w-150 h-200 comments-sm:h-150 `}>
         <div className='p-8 flex flex-col-reverse h-full'>
           <div className='overflow-y-auto flex-grow'>
             <ul className='flex flex-col gap-5'>
@@ -244,15 +244,15 @@ function Comments({ character }) {
               {comments.map((comment) => (
                 <div className='my-3' key={comment._id} id={`comment-${comment._id}`}>
                   <div className='flex mb-1.5 mx-5 comments-sm:flex-col'>
-                    <li className='text-orange-400 text-lg font-bold font-gray-800'>
+                    <li className={`${isDarkMode ? 'text-orange-200' : 'text-orange-400'} text-lg font-bold font-gray-800`}>
                       {comment.user}
                     </li>
                     <div className='flex-grow'></div>
-                    <li className='mr-3.5'>{comment.dateTime}</li>
+                    <li className={`mr-3.5 ${isDarkMode ? 'text-orange-200' : 'text-black'}`}>{comment.dateTime}</li>
                   </div>
 
                   {editingCommentId === comment._id ? (
-                    <div>
+                    <div className='mx-5 mt-2'>
                       <textarea
                         value={comment.updatedText || ''}
                         onChange={(e) => {
@@ -265,7 +265,7 @@ function Comments({ character }) {
                           });
                           setComments(updatedComments);
                         }}
-                        style={{ width: '100%', maxWidth: '900px', height: `${commentHeight}px`, resize: 'none' }}
+                        style={{ width: '95%', maxWidth: '900px', height: `${commentHeight}px`, resize: 'none' }}
                         className='rounded -my-1.5'
                       />
                       <div className='my-1.5'>
@@ -288,7 +288,7 @@ function Comments({ character }) {
                     <div>
 
                       <li
-                        className='leading-7 text-gray-800 font-medium mx-5'
+                        className={`leading-7 ${isDarkMode ? 'text-amber-50' : 'text-gray-800'} font-medium mx-5`}
                         key={comment._id}
                         dangerouslySetInnerHTML={{
                           __html: comment.text ? comment.text.replace(/\n/g, '<br />') : '',
@@ -296,11 +296,11 @@ function Comments({ character }) {
                       ></li>
                       {comment.ipAddress === userIpAddress && (
                         <>
-                          <button onClick={() => handleCommentEdit(comment._id)} className='text-gray-900 ml-5'>
+                          <button onClick={() => handleCommentEdit(comment._id)} className={`${isDarkMode ? 'text-amber-50' : 'text-gray-900'} ml-5`}>
                             <MdEditNote size={20} />
                           </button>
 
-                          <button onClick={() => handleCommentDelete(comment._id, userIpAddress)} className='text-gray-900 ml-1.5'>
+                          <button onClick={() => handleCommentDelete(comment._id, userIpAddress)} className={`${isDarkMode ? 'text-amber-50' : 'text-gray-900'} ml-1.5`}>
                             <IoTrashBinSharp size={16} />
                           </button>
                         </>
@@ -315,7 +315,7 @@ function Comments({ character }) {
         </div>
       </div>
 
-      <div className='bg-orange-100 rounded-b-2xl shadow-lg p-4 comments-lg:w-250 comments-md:w-150 comments-sm:w-150 border-t-2 border-gray-300'>
+      <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-orange-100'} rounded-b-2xl shadow-lg p-4 comments-lg:w-250 comments-md:w-150 comments-sm:w-150 border-t-2 border-gray-300`}>
         <form onSubmit={handleCommentSubmit}>
           <div className="flex flex-col ">
             <div className="flex  w-80  comments-sm:w-48 mb-4">
@@ -326,7 +326,7 @@ function Comments({ character }) {
                 onChange={(e) => {
                   setCommentUserName(e.target.value);
                 }}
-                className="rounded-lg shadow-md text-amber-500 font-bold bg-orange-50 px-3 py-2 outline-none focus:ring focus:ring-opacity-50 flex-grow"
+                className={`rounded-lg shadow-md ${isDarkMode ? 'bg-slate-500' : 'bg-orange-50'} text-amber-500 font-bold  px-3 py-2 outline-none focus:ring focus:ring-opacity-50 flex-grow`}
                 style={{ flex: 1 }}
               />
             </div>
@@ -352,7 +352,7 @@ function Comments({ character }) {
                   overflowY: 'auto',
                   resize: 'none', // Prevent resizing
                 }}
-                className={`rounded-md bg-orange-50 shadow-md px-3 py-2 outline-none focus:ring focus:ring-opacity-50 flex-grow ${isTyping ? 'border border-blue-500' : 'border border-gray-400'
+                className={`rounded-md ${isDarkMode ? 'bg-slate-500 text-amber-50' : 'bg-orange-50'} shadow-md px-3 py-2 outline-none focus:ring focus:ring-opacity-50 flex-grow ${isTyping ? 'border border-blue-500' : 'border border-gray-400'
                   }`}
               >
                 {chatMessage}

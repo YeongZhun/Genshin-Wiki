@@ -46,7 +46,7 @@ import {SlClose} from 'react-icons/sl'
 
 
 
-function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilterElement }) {
+function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilterElement, isDarkMode }) {
   if (!open) return null;
 
   const handleButtonClickResetAll = () => {
@@ -132,7 +132,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
   return ReactDOM.createPortal(
     <>
       <div className="fixed inset-0 bg-black opacity-70 z-50" />
-      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-100 p-8 z-50 rounded-md border-4 border-orange-300">
+      <div className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${isDarkMode ? 'bg-slate-600 text-white' : 'bg-orange-100 text-black'}  p-8 z-50 rounded-md border-4 border-orange-300`}>
         <button className="absolute top-3 right-3" onClick={onClose}>
           <SlClose className='text-orange-400' size={25}/>
         </button>
@@ -156,10 +156,10 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
         <div className='mb-8'>
         {/* <div className='grid grid-cols-7 gap-4 '> */}
 
-          <button className='border-2 border-orange-200 rounded-md mr-2 px-1 font-medium' 
+          <button className={`border-2 border-orange-200 rounded-md mr-2 px-1 font-medium ${isDarkMode ? 'bg-slate-800/80' : ''}`} 
             onClick={handleButtonClickRarity4}>4⭐
           </button>
-          <button className='border-2 border-orange-200 rounded-md mr-2 px-1 font-medium' 
+          <button className={`border-2 border-orange-200 rounded-md mr-2 px-1 font-medium ${isDarkMode ? 'bg-slate-800/80' : ''}`} 
             onClick={handleButtonClickRarity5}>5⭐
           </button>
 
@@ -175,7 +175,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
           
           <div className='mb-8'>
           <button onClick={handleButtonClickElementPyro}>
-            <div className='border-2 border-orange-200 rounded-md mr-2'>
+            <div className={`border-2 border-orange-200 rounded-md mr-2 ${isDarkMode ? 'bg-slate-800/80' : ''}`}>
             <img 
               src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693642842/elements/pyro_xs1jsu.png"
               alt="Pyro Element"
@@ -185,7 +185,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
           </button>
 
           <button onClick={handleButtonClickElementHydro}>
-            <div className='border-2 border-orange-200 rounded-md mr-2'>
+            <div className={`border-2 border-orange-200 rounded-md mr-2 ${isDarkMode ? 'bg-slate-800/80' : ''}`}>
             <img 
               src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693642842/elements/hydro_e5r2mv.png"
               alt="Hydro Element"
@@ -195,7 +195,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
           </button>
 
           <button onClick={handleButtonClickElementAnemo}>
-            <div className='border-2 border-orange-200 rounded-md mr-2'>
+            <div className={`border-2 border-orange-200 rounded-md mr-2 ${isDarkMode ? 'bg-slate-800/80' : ''}`}>
             <img 
               src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693642842/elements/anemo_kzjde5.png"
               alt="Anemo Element"
@@ -205,7 +205,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
           </button>
 
           <button onClick={handleButtonClickElementElectro}>
-            <div className='border-2 border-orange-200 rounded-md mr-2'>
+            <div className={`border-2 border-orange-200 rounded-md mr-2 ${isDarkMode ? 'bg-slate-800/80' : ''}`}>
             <img 
               src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693642842/elements/electro_cojft1.png"
               alt="Electro Element"
@@ -215,7 +215,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
           </button>
 
           <button onClick={handleButtonClickElementDendro}>
-            <div className='border-2 border-orange-200 rounded-md mr-2'>
+            <div className={`border-2 border-orange-200 rounded-md mr-2 ${isDarkMode ? 'bg-slate-800/80' : ''}`}>
             <img 
               src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693642842/elements/dendro_tbqh2a.png"
               alt="Dendro Element"
@@ -225,7 +225,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
           </button>
 
           <button onClick={handleButtonClickElementCryo}>
-            <div className='border-2 border-orange-200 rounded-md mr-2'>
+            <div className={`border-2 border-orange-200 rounded-md mr-2 ${isDarkMode ? 'bg-slate-800/80' : ''}`}>
             <img 
               src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693642842/elements/cryo_fnp2qx.png"
               alt="Cryo Element"
@@ -235,7 +235,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
           </button>
 
           <button onClick={handleButtonClickElementGeo}>
-            <div className='border-2 border-orange-200 rounded-md mr-2'>
+            <div className={`border-2 border-orange-200 rounded-md mr-2 ${isDarkMode ? 'bg-slate-800/80' : ''}`}>
             <img 
               src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694101466/elements/geo.png"
               alt="Geo Element"
@@ -257,7 +257,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
         <div>
 
         <button onClick={handleButtonClickWeaponSword}>
-            <div className='border-2 border-orange-200 rounded-md mr-2'>
+            <div className={`border-2 border-orange-200 rounded-md mr-2 ${isDarkMode ? 'bg-slate-800/80' : ''}`}>
             <img 
               src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693642843/weapon/Icon_Sword_qpea6f.webp"
               alt="Sword"
@@ -267,7 +267,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
         </button>
 
         <button onClick={handleButtonClickWeaponBow}>
-            <div className='border-2 border-orange-200 rounded-md mr-2'>
+            <div className={`border-2 border-orange-200 rounded-md mr-2 ${isDarkMode ? 'bg-slate-800/80' : ''}`}>
             <img 
               src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693642842/weapon/Icon_Bow_ghw7ao.webp"
               alt="Bow"
@@ -277,7 +277,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
         </button>
         
         <button onClick={handleButtonClickWeaponCatalyst}>
-            <div className='border-2 border-orange-200 rounded-md mr-2'>
+            <div className={`border-2 border-orange-200 rounded-md mr-2 ${isDarkMode ? 'bg-slate-800/80' : ''}`}>
             <img 
               src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693642842/weapon/Icon_Catalyst_jz01dh.webp"
               alt="Catalyst"
@@ -287,7 +287,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
         </button>
 
         <button onClick={handleButtonClickWeaponClaymore}>
-            <div className='border-2 border-orange-200 rounded-md mr-2'>
+            <div className={`border-2 border-orange-200 rounded-md mr-2 ${isDarkMode ? 'bg-slate-800/80' : ''}`}>
             <img 
               src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693642842/weapon/Icon_Claymore_t9quc7.webp"
               alt="Claymore"
@@ -297,7 +297,7 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
         </button>
 
         <button onClick={handleButtonClickWeaponPolearm}>
-            <div className='border-2 border-orange-200 rounded-md mr-2'>
+            <div className={`border-2 border-orange-200 rounded-md mr-2 ${isDarkMode ? 'bg-slate-800/80' : ''}`}>
             <img 
               src="https://res.cloudinary.com/dv0cc527o/image/upload/v1693642842/weapon/Icon_Polearm_kj7jyq.webp"
               alt="Polearm"

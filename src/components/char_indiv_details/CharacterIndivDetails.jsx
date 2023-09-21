@@ -8,7 +8,7 @@ import Profile from './Profile'
 import Comments from './Comments'
 import { FaStar } from 'react-icons/fa';
 
-function CharacterIndivDetails({ character }) {
+function CharacterIndivDetails({ character, isDarkMode }) {
 
   //reminder that I can deconstruct arrays 
   // const { splash_art } = character
@@ -37,13 +37,13 @@ function CharacterIndivDetails({ character }) {
   const itemProfileSelectedFlexGrow = isItemSelected === "Profile" ? 'flex-grow' : '';
   const itemProfileSelectedFlexGrowReverse = isItemSelected === "Profile" ? '' : 'flex-grow';
 
-  const itemProfileSelected = isItemSelected === "Profile" ? 'bg-orange-200' : '';
+  const itemProfileSelected = isItemSelected === "Profile" ? isDarkMode ? 'bg-orange-200/80' : 'bg-orange-200' : '';
 
-  const itemTalentSelected = isItemSelected === "Talent" ? 'bg-orange-200' : '';
+  const itemTalentSelected = isItemSelected === "Talent" ? isDarkMode ? 'bg-orange-200/80' : 'bg-orange-200' : '';
 
-  const itemConstellationSelected = isItemSelected === "Constellation" ? 'bg-orange-200' : '';
+  const itemConstellationSelected = isItemSelected === "Constellation" ? isDarkMode ? 'bg-orange-200/80' : 'bg-orange-200' : '';
 
-  const itemCommentsSelected = isItemSelected === "Comments" ? 'bg-orange-200' : '';
+  const itemCommentsSelected = isItemSelected === "Comments" ? isDarkMode ? 'bg-orange-200/80' : 'bg-orange-200' : '';
 
   let char_repr_text_size = '';
   if (character.character_representation.length > 30) {
@@ -91,19 +91,19 @@ function CharacterIndivDetails({ character }) {
   let rightItemContent;
   if (isItemSelected === "Profile") {
     rightItemContent = (
-      <Profile character={character} />
+      <Profile character={character} isDarkMode={isDarkMode}/>
     )
   } else if (isItemSelected === "Talent") {
     rightItemContent = (
-      <Talents talents_active={talents_active} talents_passive={talents_passive} />
+      <Talents talents_active={talents_active} talents_passive={talents_passive} isDarkMode={isDarkMode}/>
     )
   } else if (isItemSelected === "Constellation") {
     rightItemContent = (
-      <Constellations constellation={constellation} />
+      <Constellations constellation={constellation} isDarkMode={isDarkMode}/>
     )
   } else if (isItemSelected === "Comments") {
     rightItemContent = (
-      <Comments character={character} />
+      <Comments character={character} isDarkMode={isDarkMode}/>
     )
   }
 
@@ -127,14 +127,14 @@ function CharacterIndivDetails({ character }) {
                 <div className='flex gap-1 items-center '>
                   <img src={character.elementUrl}
                     className='w-11 h-11 ' />
-                  <h1 className='font-extrabold text-5xl text-white'>{character.name}</h1>
+                  <h1 className={`font-extrabold text-5xl ${isDarkMode ? 'text-amber-50' : 'text-white'} `}>{character.name}</h1>
                 </div>
 
               </div>
 
-              <div className='rounded-b-2xl shadow-md border-gray-400 border-r-2 border-b-2 -ml-10 pl-22px py-1 w-120 bg-orange-75 char-sm:w-96 char-ssm:w-100'>
+              <div className={`rounded-b-2xl shadow-md border-gray-400 border-r-2 border-b-2 -ml-10 pl-22px py-1 w-120 ${isDarkMode ? 'bg-slate-700' : 'bg-orange-75'}  char-sm:w-96 char-ssm:w-100`}>
                 <p className={` font-bold ${char_repr_text_size}
-          ${character.element === 'Dendro' ? 'text-emerald-700' :
+          ${character.element === 'Dendro' ? isDarkMode ? 'text-emerald-500' : 'text-emerald-700' :
                     character.element === 'Pyro' ? 'text-pyro' :
                       character.element === 'Hydro' ? 'text-blue-400' :
                         character.element === 'Anemo' ? 'text-anemo' :
@@ -164,42 +164,42 @@ function CharacterIndivDetails({ character }) {
 
             </div>
 
-            <div className='mt-2 flex flex-col shadow-md rounded-2xl border-2 border-gray-400 p-2 w-102 ml-10 bg-orange-75 char-sm:w-80 char-sm:ml-6 char-ssm:w-80 char-ssm:ml-5'>
+            <div className={`mt-2 flex flex-col shadow-md rounded-2xl border-2 border-gray-400 p-2 w-102 ml-10 ${isDarkMode ? 'bg-slate-700' : 'bg-orange-75'} char-sm:w-80 char-sm:ml-6 char-ssm:w-80 char-ssm:ml-5`}>
               <Link to={`/characters/${encodeURIComponent(character._id)}/Profile`}>
                 <div onClick={handleMouseClickProfile} className={`p-2 rounded-2xl ${itemProfileSelected} `}>
-                  <button className='font-bold text-3xl text-gray-700'>Profile</button>
+                  <button className={`font-bold text-3xl ${isDarkMode ? 'text-amber-100'  : 'text-gray-700'} `}>Profile</button>
                 </div>
               </Link>
 
               <Link to={`/characters/${encodeURIComponent(character._id)}/Talent`}>
                 <div onClick={handleMouseClickTalent} className={`p-2 rounded-2xl ${itemTalentSelected} `}>
-                  <button className='font-bold text-3xl text-gray-700'>Talent</button>
+                  <button className={`font-bold text-3xl  ${isDarkMode ? 'text-amber-100'  : 'text-gray-700'}`}>Talent</button>
                 </div>
               </Link>
 
               <Link to={`/characters/${encodeURIComponent(character._id)}/Constellation`}>
                 <div onClick={handleMouseClickConstellation} className={`p-2 rounded-2xl ${itemConstellationSelected} `}>
-                  <button className='font-bold text-3xl text-gray-700'>Constellation</button>
+                  <button className={`font-bold text-3xl  ${isDarkMode ? 'text-amber-100'  : 'text-gray-700'}`}>Constellation</button>
                 </div>
               </Link>
 
               <Link to={`/characters/${encodeURIComponent(character._id)}/Comments`}>
                 <div onClick={handleMouseClickComments} className={`p-2 rounded-2xl ${itemCommentsSelected} `}>
-                  <button className='font-bold text-3xl text-gray-700'>Comments</button>
+                  <button className={`font-bold text-3xl ${isDarkMode ? 'text-amber-100'  : 'text-gray-700'}`}>Comments</button>
                 </div>
               </Link>
 
             </div>
           </div>
           <div className={` ${itemProfileSelectedFlexGrow}`}></div>
-          <div className={` ${itemProfileSelectedFlexGrowReverse}`}>
+          <div className={` ${itemProfileSelectedFlexGrowReverse} `}>
             {rightItemContent}
           </div>
         </div>
       </div>
 
       <div>
-        <Footer />
+        <Footer isDarkMode={isDarkMode}/>
       </div>
     </>
   )
