@@ -116,11 +116,11 @@ function CharacterIndivDetails({ character }) {
             <div className='flex flex-col  '>
               <div className={`rounded-t-2xl shadow-md border-gray-400 border-r-2 border-t-2 border-b-2 gap-2 flex flex-col -ml-10 pl-10  py-1 w-120 char-sm:w-96 char-ssm:w-100
         ${character.element === 'Dendro' ? 'bg-emerald-700' :
-                  character.element === 'Pyro' ? 'bg-red-500' :
-                    character.element === 'Hydro' ? 'bg-blue-500' :
-                      character.element === 'Anemo' ? 'bg-emerald-400' :
-                        character.element === 'Electro' ? 'bg-purple-700' :
-                          character.element === 'Cryo' ? 'bg-cyan-400' :
+                  character.element === 'Pyro' ? 'bg-pyro' :
+                    character.element === 'Hydro' ? 'bg-blue-400' :
+                      character.element === 'Anemo' ? 'bg-anemo' :
+                        character.element === 'Electro' ? 'bg-electro' :
+                          character.element === 'Cryo' ? 'bg-cryo' :
                             character.element === 'Geo' ? 'bg-yellow-600' :
                               ''
                 }`}>
@@ -135,11 +135,11 @@ function CharacterIndivDetails({ character }) {
               <div className='rounded-b-2xl shadow-md border-gray-400 border-r-2 border-b-2 -ml-10 pl-22px py-1 w-120 bg-orange-75 char-sm:w-96 char-ssm:w-100'>
                 <p className={` font-bold ${char_repr_text_size}
           ${character.element === 'Dendro' ? 'text-emerald-700' :
-                    character.element === 'Pyro' ? 'text-red-500' :
-                      character.element === 'Hydro' ? 'text-blue-500' :
-                        character.element === 'Anemo' ? 'text-emerald-400' :
-                          character.element === 'Electro' ? 'text-purple-700' :
-                            character.element === 'Cryo' ? 'text-cyan-400' :
+                    character.element === 'Pyro' ? 'text-pyro' :
+                      character.element === 'Hydro' ? 'text-blue-400' :
+                        character.element === 'Anemo' ? 'text-anemo' :
+                          character.element === 'Electro' ? 'text-electro' :
+                            character.element === 'Cryo' ? 'text-cryo' :
                               character.element === 'Geo' ? 'text-yellow-600' :
                                 ''
                   }`}>{character.character_representation}</p>

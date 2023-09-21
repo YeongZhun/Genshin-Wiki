@@ -60,9 +60,14 @@ export default {
                 },
                 'darker-purple': '#745e95',
                 'lighter-purple': '#B57CB3',
+                'electro': '#be80da',
+                'anemo': '#62b598',
+                'cryo': '#3fd0d4',
+                'pyro': '#E95C4B',
                 'darker-brown': '#b47324',
                 'lighter-brown': '#e89c38',
                 'biege': '#e9e5dc',
+                'dark-mode-bg': '#121212'
             },
         },
         screens: {

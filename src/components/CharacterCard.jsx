@@ -58,19 +58,19 @@ function CharacterCard({ character }) {
             
             <div className='pb-1.5'>
             {character.element === 'Pyro' && (
-              <p className="text-red-500 font-bold text-center">{character.element}</p>
+              <p className="text-pyro font-bold text-center">{character.element}</p>
             )}
             {character.element === 'Dendro' && (
               <p className="text-green-500 font-bold text-center">{character.element}</p>
             )}
             {character.element === 'Anemo' && (
-              <p className="text-emerald-500 font-bold text-center">{character.element}</p>
+              <p className="text-anemo font-bold text-center">{character.element}</p>
             )}
             {character.element === 'Hydro' && (
-              <p className="text-blue-500 font-bold text-center">{character.element}</p>
+              <p className="text-blue-400 font-bold text-center">{character.element}</p>
             )}
             {character.element === 'Cryo' && (
-              <p className="text-cyan-400 font-bold text-center">{character.element}</p>
+              <p className="text-cryo font-bold text-center">{character.element}</p>
             )}
             {character.element === 'Geo' && (
               <p className="text-amber-600 font-bold text-center">{character.element}</p>
