@@ -13,7 +13,7 @@ const DarkModeSwitch = ({ isOn, handleToggle }) => {
           />
           <label
             style={{ background: isOn && '#fb923c' }}
-            className="react-switch-label mt-2"
+            className="react-switch-label mt-3"
             htmlFor={`react-switch-new`}
           >
             <span className={`react-switch-button`} />

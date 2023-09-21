@@ -10,13 +10,13 @@ function SideBar({ isHovered, isDarkMode, setIsDarkMode, toggleDarkMode }) {
 
   const [isHomeHovered, setIsHomeHovered] = useState(false)
   const [isCharacterBarHovered, setIsCharacterBarHovered] = useState(false)
-  const [isDarkModeIconHovered, setIsDarkModeIconHovered] = useState(false)
+
 
   
 
   const hoverClassHome = isHomeHovered ? isDarkMode ? 'bg-orange-300/80' : 'bg-orange-300/95' : '';
   const hoverClassCharBar = isCharacterBarHovered ? isDarkMode ? 'bg-orange-300/80' : 'bg-orange-300/95' : '';
-  const hoverClassDarkMode = isDarkModeIconHovered ? isDarkMode ? 'bg-orange-300/80' : 'bg-orange-300/95' : '';
+
 
   const handleMouseEnterHome = () => {
     setIsHomeHovered(true);
@@ -34,13 +34,7 @@ function SideBar({ isHovered, isDarkMode, setIsDarkMode, toggleDarkMode }) {
     setIsCharacterBarHovered(false);
   }
 
-  const handleMouseEnterDarkModeIcon = () => {
-    setIsDarkModeIconHovered(true);
-  }
 
-  const handleMouseLeaveDarkModeIcon = () => {
-    setIsDarkModeIconHovered(false);
-  }
 
   return (
     <>
@@ -72,9 +66,8 @@ function SideBar({ isHovered, isDarkMode, setIsDarkMode, toggleDarkMode }) {
 
         <div className='flex-grow'></div>
 
-        <div className={`flex flex-col items-center justify-center pb-6 ${isHovered ? 'w-64' : ''} ${hoverClassDarkMode} `}
-        onMouseEnter={handleMouseEnterDarkModeIcon} onMouseLeave={handleMouseLeaveDarkModeIcon}
-        onTouchEnd={handleMouseLeaveDarkModeIcon}>
+        <div className={`flex flex-col items-center justify-center pb-5 ${isHovered ? 'w-64' : ''}  `}
+        >
           {isDarkMode ? (
             <div className='pt-3'><BsFillMoonFill size={30} color='white' /> </div>
           ) : (
