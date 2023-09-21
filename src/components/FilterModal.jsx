@@ -43,7 +43,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {SlClose} from 'react-icons/sl'
-
+import { FaStar } from 'react-icons/fa';
 
 
 function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilterElement, isDarkMode }) {
@@ -153,14 +153,14 @@ function FilterModal({ open, onClose, setFilterRarity, setFilterWeapon, setFilte
             onClick={handleButtonClickRarityReset}> Select All
         </button>
         </div>
-        <div className='mb-8'>
+        <div className='mb-8 flex'>
         {/* <div className='grid grid-cols-7 gap-4 '> */}
 
-          <button className={`border-2 border-orange-200 rounded-md mr-2 px-1 font-medium ${isDarkMode ? 'bg-slate-800/80' : ''}`} 
-            onClick={handleButtonClickRarity4}>4⭐
+          <button className={` flex justify-center items-center gap-1 border-2 border-orange-200 rounded-md mr-2 px-1 font-medium ${isDarkMode ? 'bg-slate-800/80' : ''}`} 
+            onClick={handleButtonClickRarity4}>4 <FaStar size={20} strokeWidth={10} color='#FACC14' stroke='orange' />
           </button>
-          <button className={`border-2 border-orange-200 rounded-md mr-2 px-1 font-medium ${isDarkMode ? 'bg-slate-800/80' : ''}`} 
-            onClick={handleButtonClickRarity5}>5⭐
+          <button className={` flex justify-center items-center gap-1 border-2 border-orange-200 rounded-md mr-2 px-1 font-medium ${isDarkMode ? 'bg-slate-800/80' : ''}`} 
+            onClick={handleButtonClickRarity5}>5<FaStar size={20} strokeWidth={10} color='#FACC14' stroke='orange' />
           </button>
 
         </div>
