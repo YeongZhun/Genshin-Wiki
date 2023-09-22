@@ -100,13 +100,13 @@ function MainPage({ isDarkMode }) {
       <div className='container  pl-8 pr-8 pb-8 pt-4 min-h-full min-w-full flex-grow'>
         <div className='flex flex-col gap-2'>
           <div className='flex items-center'>
-            <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694877738/wh7hmaqnvpraotfdt8ur.webp" className='mainpage-md:w-28 mainpage-header-md:w-24' />
-            <h1 className={`text-6xl mainpage-header-md:text-5xl font-extrabold ${isDarkMode ? 'text-orange-200/90' : 'text-orange-300'} mainpage-md:whitespace-nowrap mainpage-sm:text-center`}>Project Fallen</h1>
+            <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694877738/wh7hmaqnvpraotfdt8ur.webp" className='mainpage-md:w-28 mainpage-header-md:w-12' />
+            <h1 className={` text-6xl mainpage-header-md:text-3xl font-extrabold ${isDarkMode ? 'text-orange-200/90' : 'text-orange-300'} mainpage-md:whitespace-nowrap mainpage-sm:text-center`}>Project Fallen</h1>
 
-            <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694877737/owny6ex2sdp974a4tprg.webp" className='mainpage-md:w-32 mainpage-header-md:w-28' />
+            <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694877737/owny6ex2sdp974a4tprg.webp" className='mainpage-md:w-32 mainpage-header-md:w-14' />
           </div>
 
-          <div className='flex mb-4 -mt-4 flex-wrap'>
+          {/* <div className='flex mb-4 -mt-4 flex-wrap'>
             <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/kekadrvxyai6mre3enrz.webp" className='w-10 ' />
             <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/spw1ufvk38nrn68nbzel.webp" className='w-10 ' />
             <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/kekadrvxyai6mre3enrz.webp" className='w-10 ' />
@@ -124,14 +124,14 @@ function MainPage({ isDarkMode }) {
             <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/kekadrvxyai6mre3enrz.webp" className='w-10 ' />
             <img src="https://res.cloudinary.com/dv0cc527o/image/upload/v1694878104/spw1ufvk38nrn68nbzel.webp" className='w-10 ' />
 
-          </div>
+          </div> */}
 
         </div>
         <p className={`font-semibold ${isDarkMode ? 'text-amber-100' : ''}`}>An ongoing project to compile your fallen journey in the Genshin Impact world!</p>
         <br />
 
         <div className='w-2/3 relative ' >
-          <div className='image-container relative mainpage-image-md:w-185 mainpage-image-sm:w-120 mainpage-image-ssm:w-80' style={{ height: '300px' }}>
+          <div className='image-container relative mainpage-image-md:w-185 mainpage-image-sm:w-120 mainpage-image-ssm:w-60' style={{ height: '300px' }}>
             <button
               className={`absolute left-0 top-0 bottom-0 ${handleImageLeftHover} 
                 }`}
@@ -172,7 +172,7 @@ function MainPage({ isDarkMode }) {
               ))}
             </div>
           </div>
-          <p className={`text-lg italic mainpage-image-md:w-185 mainpage-image-sm:w-80 mt-1 ${isDarkMode ? 'text-amber-100' : ''}`}>"Osmanthus wine tastes the same as I remember... But where are those who share the memory?" - Zhongli</p>
+          <p className={`text-lg italic mainpage-image-md:w-185 mainpage-image-sm:w-60 mt-1 ${isDarkMode ? 'text-amber-100' : ''}`}>"Osmanthus wine tastes the same as I remember... But where are those who share the memory?" - Zhongli</p>
         </div>
 
 
@@ -182,14 +182,14 @@ function MainPage({ isDarkMode }) {
         <br />
         <h2 className={`text-4xl mb-2 font-medium ${isDarkMode ? 'text-orange-200/90' : 'text-orange-300'}`}>Server Reset</h2>
 
-        <div className={`flex flex-col w-80 gap-0 rounded-md overflow-hidden border-2  
+        <div className={`flex flex-col mainpage-image-md:w-185 mainpage-image-sm:w-120 mainpage-image-ssm:w-60 gap-0 rounded-md overflow-hidden border-2  
         ${isDarkMode ? 'text-amber-100 border-orange-200/90' : 'text-black border-orange-300'}`}>
           <div className='flex flex-row items-center'>
-            <button onClick={() => handleTimezoneChange('Asia')} className={` border-2 ${isDarkMode ? 'border-orange-200/90' : 'border-orange-300'} text-center p-1 border-r-0  text-2xl w-full ${selectedTimezone === 'Asia' ? isDarkMode ? 'bg-slate-600/60' : 'bg-orange-300/80' : isDarkMode ? 'bg-slate-500/80' : 'bg-orange-200/80'} `}>Asia</button>
+            <button onClick={() => handleTimezoneChange('Asia')} className={` border-2 ${isDarkMode ? 'border-orange-200/90' : 'border-orange-300'} text-center p-1 border-r-0  text-xl w-full ${selectedTimezone === 'Asia' ? isDarkMode ? 'bg-slate-600/60' : 'bg-orange-300/80' : isDarkMode ? 'bg-slate-500/80' : 'bg-orange-200/80'} `}>Asia</button>
 
-            <button onClick={() => handleTimezoneChange('Europe')} className={` border-2 ${isDarkMode ? 'border-orange-200/90' : 'border-orange-300'} text-center p-1 border-r-0  text-2xl w-full ${selectedTimezone === 'Europe' ? isDarkMode ? 'bg-slate-600/60' : 'bg-orange-300/80' : isDarkMode ? 'bg-slate-500/80' : 'bg-orange-200/80'} `}>Europe</button>
+            <button onClick={() => handleTimezoneChange('Europe')} className={` border-2 ${isDarkMode ? 'border-orange-200/90' : 'border-orange-300'} text-center p-1 border-r-0  text-xl w-full ${selectedTimezone === 'Europe' ? isDarkMode ? 'bg-slate-600/60' : 'bg-orange-300/80' : isDarkMode ? 'bg-slate-500/80' : 'bg-orange-200/80'} `}>Europe</button>
 
-            <button onClick={() => handleTimezoneChange('America')} className={` border-2 ${isDarkMode ? 'border-orange-200/90' : 'border-orange-300'} text-center p-1 text-2xl w-full ${selectedTimezone === 'America' ? isDarkMode ? 'bg-slate-600/60' : 'bg-orange-300/80' : isDarkMode ? 'bg-slate-500/80' : 'bg-orange-200/80'} `}>America</button>
+            <button onClick={() => handleTimezoneChange('America')} className={` border-2 ${isDarkMode ? 'border-orange-200/90' : 'border-orange-300'} text-center p-1 text-xl w-full ${selectedTimezone === 'America' ? isDarkMode ? 'bg-slate-600/60' : 'bg-orange-300/80' : isDarkMode ? 'bg-slate-500/80' : 'bg-orange-200/80'} `}>America</button>
           </div>
 
           <div className={`border-2 ${isDarkMode ? 'border-orange-200/90' : 'border-orange-300'} border-t-0 text-center w-full p-2 ${isDarkMode ? 'bg-slate-500' : 'bg-orange-100/80'}`}>

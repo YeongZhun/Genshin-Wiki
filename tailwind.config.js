@@ -95,6 +95,8 @@ export default {
 
             "5xl": { min: "2560px" },
 
+            "screen-sidebar-fixed": { min: "1300px" },
+
             "char-gallery-sm": { max: "535px"},
 
             "char-md": { min: "1251px" },

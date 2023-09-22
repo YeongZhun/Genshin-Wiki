@@ -9,6 +9,7 @@ import MainPage from './components/MainPage';
 import axios from 'axios'
 import CharacterIndivDetails from './components/char_indiv_details/CharacterIndivDetails';
 import LoadingScreen from './components/LoadingScreen';
+import AboutUs from './components/AboutUs';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -89,7 +90,7 @@ function App() {
 
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
           className={`flex-none ${isDarkMode ? 'bg-slate-800 border-gray-500/70' : 'bg-orange-100 border-gray-300'} transform transition-transform duration-300 group border-r-2 z-30 
-             rounded-sm h-screen fixed ${isHovered ? ' w-64' : ''} `}>
+             rounded-sm min-h-full fixed ${isHovered ? ' w-64' : ''} `}>
           <SideBar isHovered={isHovered} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} toggleDarkMode={toggleDarkMode} />
         </div>
 
@@ -102,7 +103,7 @@ function App() {
                   <LoadingScreen isDarkMode={isDarkMode} />
                 </div>
               ) : (
-                <MainPage isDarkMode={isDarkMode}  />
+                <MainPage isDarkMode={isDarkMode} />
               )}
 
 
@@ -118,6 +119,19 @@ function App() {
                 </div>
               ) : (
                 <CharacterGallery chars={chars} isDarkMode={isDarkMode} />
+              )}
+
+            </div>
+          } />
+
+          <Route path="/AboutUs" element={
+            <div className='flex-grow ml-20'>
+              {isLoading ? (
+                <div className="loading-container">
+                  <LoadingScreen isDarkMode={isDarkMode} />
+                </div>
+              ) : (
+                <AboutUs isDarkMode={isDarkMode} />
               )}
 
             </div>

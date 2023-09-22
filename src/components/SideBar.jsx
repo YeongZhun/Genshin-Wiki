@@ -66,7 +66,7 @@ function SideBar({ isHovered, isDarkMode, setIsDarkMode, toggleDarkMode }) {
 
         <div className='flex-grow'></div>
 
-        <div className={`flex flex-col items-center justify-center pb-5 ${isHovered ? 'w-64' : ''}  `}
+        <div className={`flex flex-col items-center justify-center  pb-5 ${isHovered ? 'w-64' : ''}  `}
         >
           {isDarkMode ? (
             <div className='pt-3'><BsFillMoonFill size={30} color='white' /> </div>
