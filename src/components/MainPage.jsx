@@ -46,15 +46,11 @@ function MainPage({ isDarkMode }) {
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1695297847/GImontake/qh7gle69rf2wwcpiytm2.jpg",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1695297846/GImontake/quwr0qyxyhbm0hbuxht1.jpg",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342570/image-slider/Liyue.png",
-    "https://res.cloudinary.com/dv0cc527o/image/upload/v1695297859/GImontake/pmzxanm26u1tqzkijzkv.jpg",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1695297847/GImontake/ft6nipadwuuvh0gjs6im.jpg",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1695297846/GImontake/eseter88uwnhzfhpvuak.webp",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342508/image-slider/Sumeru.jpg",
-    "https://res.cloudinary.com/dv0cc527o/image/upload/v1695308258/GImontake/xifw0z4qfartfpjrzzb2.avif",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1695308691/GImontake/u4niijufwngfdpfdff6f.webp",
-    "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342506/image-slider/Fontaine.webp",
-    "https://res.cloudinary.com/dv0cc527o/image/upload/v1695297849/GImontake/mbl9h7ixcaistoitq4hb.webp"
-    
+    "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342506/image-slider/Fontaine.webp"
   ]
 
   // Define a ref to hold the interval ID for auto-sliding
