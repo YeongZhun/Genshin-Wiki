@@ -112,9 +112,9 @@ function CharacterIndivDetails({ character, isDarkMode }) {
       <div className='min-h-screen  bg-no-repeat bg-center bg-fixed ' style={bgStyle} >
 
         <div className='flex gap-4 char-sm:flex-col char-ssm:flex-col my-8 mx-8 char-ssm:mx-6'>
-          <div>
+          <div className=''>
             <div className='flex flex-col  '>
-              <div className={`rounded-t-2xl shadow-md border-gray-400 border-r-2 border-t-2 border-b-2 gap-2 flex flex-col -ml-10 pl-10  py-1 w-120 char-sm:w-96 char-ssm:w-100
+              <div className={`rounded-t-2xl shadow-md border-gray-400 border-r-2 border-t-2 border-b-2 gap-2 flex flex-col -ml-10 pl-10  py-1 w-120 char-sm:w-96 char-ssm:w-85
         ${character.element === 'Dendro' ? 'bg-emerald-700' :
                   character.element === 'Pyro' ? 'bg-pyro' :
                     character.element === 'Hydro' ? 'bg-blue-400' :
@@ -127,12 +127,12 @@ function CharacterIndivDetails({ character, isDarkMode }) {
                 <div className='flex gap-1 items-center '>
                   <img src={character.elementUrl}
                     className='w-11 h-11 ' />
-                  <h1 className={`font-extrabold text-5xl ${isDarkMode ? 'text-amber-50' : 'text-white'} `}>{character.name}</h1>
+                  <h1 className={`font-extrabold text-5xl char-ssm:text-4xl char-sm:text-4xl ${isDarkMode ? 'text-amber-50' : 'text-white'} `}>{character.name}</h1>
                 </div>
 
               </div>
 
-              <div className={`rounded-b-2xl shadow-md border-gray-400 border-r-2 border-b-2 -ml-10 pl-22px py-1 w-120 ${isDarkMode ? 'bg-slate-700' : 'bg-orange-75'}  char-sm:w-96 char-ssm:w-100`}>
+              <div className={`rounded-b-2xl shadow-md border-gray-400 border-r-2 border-b-2 -ml-10 pl-22px py-1 w-120 char-ssm:w-85 ${isDarkMode ? 'bg-slate-700' : 'bg-orange-75'}  char-sm:w-96 `}>
                 <p className={` font-bold ${char_repr_text_size}
           ${character.element === 'Dendro' ? isDarkMode ? 'text-emerald-500' : 'text-emerald-700' :
                     character.element === 'Pyro' ? 'text-pyro' :
@@ -164,7 +164,7 @@ function CharacterIndivDetails({ character, isDarkMode }) {
 
             </div>
 
-            <div className={`mt-2 flex flex-col shadow-md rounded-2xl border-2 border-gray-400 p-2 w-102 ml-10 ${isDarkMode ? 'bg-slate-700' : 'bg-orange-75'} char-sm:w-80 char-sm:ml-6 char-ssm:w-80 char-ssm:ml-5`}>
+            <div className={`mt-2 flex flex-col shadow-md rounded-2xl border-2 border-gray-400 p-2 w-102 ml-10 ${isDarkMode ? 'bg-slate-700' : 'bg-orange-75'} char-sm:w-80 char-sm:ml-6 char-ssm:w-80 char-ssm:-ml-5`}>
               <Link to={`/characters/${encodeURIComponent(character._id)}/Profile`}>
                 <div onClick={handleMouseClickProfile} className={`p-2 rounded-2xl ${itemProfileSelected} `}>
                   <button className={`font-bold text-3xl ${isDarkMode ? 'text-amber-100'  : 'text-gray-700'} `}>Profile</button>

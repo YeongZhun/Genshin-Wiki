@@ -6,12 +6,12 @@ import { RiSwordFill } from 'react-icons/ri'
 function Profile({ character, isDarkMode }) {
 
   return (
-    <div className={`char-md:sticky char-md:right-0 char-md:top-0 ${isDarkMode ? 'bg-slate-700' : 'bg-orange-75'} p-4  rounded-2xl border-gray-400 border-2 shadow-md w-150 char-sm:w-100 char-sm:ml-6 char-ssm:w-72 char-ssm:ml-6`}>
+    <div className={`char-md:sticky char-md:right-0 char-md:top-0 ${isDarkMode ? 'bg-slate-700' : 'bg-orange-75'} p-4  rounded-2xl border-gray-400 border-2 shadow-md w-150 char-sm:w-100 char-sm:ml-6 char-ssm:w-72 char-ssm:-ml-5`}>
     <p className={`font-bold text-2xl ${isDarkMode ? 'text-amber-50' : 'text-gray-800'} mb-2 mx-2`}>Lvl. 90: </p>
 
     <div className={`flex ${isDarkMode ? 'bg-gray-500/50 text-amber-50' : 'bg-amber-50 text-gray-800'}`}>
       <div className='flex gap-1 text-xl font-semibold my-0.5 mx-2'>
-        <FaHeart size={25} color="white"/> Base HP:
+        <FaHeart size={25} /> Base HP:
       </div>
       <div className='flex-grow'></div>
       <div className='flex text-xl font-semibold mx-2'>{character.hp}</div>

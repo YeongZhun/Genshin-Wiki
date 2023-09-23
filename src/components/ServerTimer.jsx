@@ -55,7 +55,7 @@ function ServerResetTimer1({ selectedTimezone }) {
   }
 
   return (
-    <div className="text-3xl">
+    <div className="text-2xl">
       {`${remainingTime.hours}h : ${remainingTime.minutes}m : ${remainingTime.seconds}s`}
     </div>
   );

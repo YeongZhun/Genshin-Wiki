@@ -233,10 +233,10 @@ function Comments({ character, isDarkMode }) {
 
 
   return (
-    <div>
-      <h2 className={` ${isDarkMode ? 'text-amber-100' : 'text-gray-800'} font-bold text-3xl mb-5`}>Comment on what you like about the character!</h2>
+    <div className='-ml-4'>
+      <h2 className={` ${isDarkMode ? 'text-amber-100' : 'text-gray-800 bg-orange-75'} rounded-2xl text-center shadow-lg p-2 font-bold text-2xl comments-md:text-xl comments-sm:text-lg mb-5 comments-lg:w-250 comments-md:w-130 comments-sm:w-130 comments-ssm:w-11/12`}>Comment on what you like about the character!</h2>
 
-      <div className={` ${isDarkMode ? 'bg-slate-600' : 'bg-orange-75'} rounded-t-2xl shadow-lg comments-lg:w-250 comments-md:w-150 comments-sm:w-150 h-200 comments-sm:h-150 `}>
+      <div className={` ${isDarkMode ? 'bg-slate-600' : 'bg-orange-75'} rounded-t-2xl shadow-lg comments-lg:w-250 comments-md:w-130 comments-sm:w-130 comments-ssm:w-11/12 h-200 comments-sm:h-150 `}>
         <div className='p-8 flex flex-col-reverse h-full'>
           <div className='overflow-y-auto flex-grow'>
             <ul className='flex flex-col gap-5'>
@@ -315,10 +315,10 @@ function Comments({ character, isDarkMode }) {
         </div>
       </div>
 
-      <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-orange-100'} rounded-b-2xl shadow-lg p-4 comments-lg:w-250 comments-md:w-150 comments-sm:w-150 border-t-2 border-gray-300`}>
+      <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-orange-100'} rounded-b-2xl shadow-lg p-4 comments-lg:w-250 comments-md:w-130 comments-sm:w-130 comments-ssm:w-11/12 border-t-2 border-gray-300`}>
         <form onSubmit={handleCommentSubmit}>
           <div className="flex flex-col ">
-            <div className="flex  w-80  comments-sm:w-48 mb-4">
+            <div className="flex  w-80  comments-sm:w-48 comments-ssm:w-36 mb-4">
               <input
                 type="text"
                 placeholder="Your Name"

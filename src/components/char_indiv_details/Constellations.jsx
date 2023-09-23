@@ -2,7 +2,7 @@ import React from 'react'
 
 function Constellations({ constellation, isDarkMode }) {
   return (
-    <div className={` ${isDarkMode ? 'bg-slate-700' : 'bg-orange-75'} p-4 rounded-2xl`}>
+    <div className={` ${isDarkMode ? 'bg-slate-700' : 'bg-orange-75'} p-4 rounded-2xl -ml-5 w-11/12`}>
     <div className='grid cons-2xl:grid-cols-3 cons-xl:grid-cols-3 cons-l:grid-cols-3 cons-md:grid-cols-3 cons-sm:grid-cols-3 
     cons-ssm:grid-cols-2 gap-4'>
       {constellation.map((constellation, index) => (

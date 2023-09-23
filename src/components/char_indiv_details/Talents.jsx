@@ -2,7 +2,7 @@ import React from 'react'
 
 function Talents({ talents_active, talents_passive, isDarkMode }) {
   return (
-    <div>
+    <div className='-ml-5 w-11/12'>
     <div className=''>
       
       <div className={` ${isDarkMode ? 'bg-slate-700' : 'bg-orange-75'} p-4 rounded-t-3xl `}>

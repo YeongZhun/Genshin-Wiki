@@ -38,6 +38,7 @@ export default {
                 100: "24rem",
                 92: "23rem",
                 90: "22rem",
+                85: "21rem",
             },
 
             height: {

@@ -53,7 +53,7 @@ function CharacterGallery({ chars, isDarkMode }) {
           />
           <div className=' '>
             <div className="grid ssm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6
-            3xl:grid-cols-8 4xl:grid-cols-11 5xl:grid-cols-12 6xl:grid-cols-13 7xl:grid-cols-14 8xl:grid-cols-15 gap-x-14 gap-y-8 ssm:ml-16 sm:ml-16">
+            3xl:grid-cols-8 4xl:grid-cols-11 5xl:grid-cols-12 6xl:grid-cols-13 7xl:grid-cols-14 8xl:grid-cols-15 gap-x-14 gap-y-8 ssm:ml-10 sm:ml-10">
               {filteredCharacters.map((character) => (
                 <CharacterCard key={character._id} character={character} />
               ))}

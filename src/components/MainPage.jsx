@@ -44,12 +44,10 @@ function MainPage({ isDarkMode }) {
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1695297848/GImontake/zxjwvb5b5fgpumorwgdk.avif",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342586/image-slider/Mondstatd.jpg",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1695297847/GImontake/qh7gle69rf2wwcpiytm2.jpg",
-    "https://res.cloudinary.com/dv0cc527o/image/upload/v1695297846/GImontake/quwr0qyxyhbm0hbuxht1.jpg",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342570/image-slider/Liyue.png",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1695297847/GImontake/ft6nipadwuuvh0gjs6im.jpg",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1695297846/GImontake/eseter88uwnhzfhpvuak.webp",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342508/image-slider/Sumeru.jpg",
-    "https://res.cloudinary.com/dv0cc527o/image/upload/v1695308691/GImontake/u4niijufwngfdpfdff6f.webp",
     "https://res.cloudinary.com/dv0cc527o/image/upload/v1694342506/image-slider/Fontaine.webp"
   ]
 
@@ -127,7 +125,7 @@ function MainPage({ isDarkMode }) {
         <br />
 
         <div className='w-2/3 relative ' >
-          <div className='image-container relative mainpage-image-md:w-185 mainpage-image-sm:w-120 mainpage-image-ssm:w-60' style={{ height: '300px' }}>
+          <div className='image-container relative mainpage-image-md:w-185 mainpage-image-sm:w-120 mainpage-image-ssm:w-56' style={{ height: '300px' }}>
             <button
               className={`absolute left-0 top-0 bottom-0 ${handleImageLeftHover} 
                 }`}
@@ -168,7 +166,7 @@ function MainPage({ isDarkMode }) {
               ))}
             </div>
           </div>
-          <p className={`text-lg italic mainpage-image-md:w-185 mainpage-image-sm:w-60 mt-1 ${isDarkMode ? 'text-amber-100' : ''}`}>"Osmanthus wine tastes the same as I remember... But where are those who share the memory?" - Zhongli</p>
+          <p className={`text-lg mainpage-image-ssm:text-base italic mainpage-image-md:w-185 mainpage-image-sm:w-56 mt-1 ${isDarkMode ? 'text-amber-100' : ''}`}>"Osmanthus wine tastes the same as I remember... But where are those who share the memory?" - Zhongli</p>
         </div>
 
 
@@ -178,7 +176,7 @@ function MainPage({ isDarkMode }) {
         <br />
         <h2 className={`text-4xl mb-2 font-medium ${isDarkMode ? 'text-orange-200/90' : 'text-orange-300'}`}>Server Reset</h2>
 
-        <div className={`flex flex-col mainpage-image-md:w-185 mainpage-image-sm:w-120 mainpage-image-ssm:w-60 gap-0 rounded-md overflow-hidden border-2  
+        <div className={`flex flex-col mainpage-image-md:w-185 mainpage-image-sm:w-120 mainpage-image-ssm:w-56 gap-0 rounded-md overflow-hidden border-2  
         ${isDarkMode ? 'text-amber-100 border-orange-200/90' : 'text-black border-orange-300'}`}>
           <div className='flex flex-row items-center'>
             <button onClick={() => handleTimezoneChange('Asia')} className={` border-2 ${isDarkMode ? 'border-orange-200/90' : 'border-orange-300'} text-center p-1 border-r-0  text-xl w-full ${selectedTimezone === 'Asia' ? isDarkMode ? 'bg-slate-600/60' : 'bg-orange-300/80' : isDarkMode ? 'bg-slate-500/80' : 'bg-orange-200/80'} `}>Asia</button>
