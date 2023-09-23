@@ -30,7 +30,7 @@ function CharacterGallery({ chars, isDarkMode }) {
     <>
       <div className=' min-h-screen'>
         <div className="container  p-8 char-gallery-sm:p-2 char-gallery-sm:my-2 min-h-full min-w-full flex-grow  ">
-          <h1 className={`text-6xl font-semibold mb-4 ${isDarkMode ? 'text-orange-200' : 'text-orange-300'} `}>Characters</h1>
+          <h1 className={`text-6xl char-gallery-sm:text-5xl font-semibold mb-4 ${isDarkMode ? 'text-orange-200' : 'text-orange-300'} `}>Characters</h1>
           <div>
             <button className={`p-3 flex rounded-md ${isDarkMode ? 'bg-orange-100/80' : 'bg-orange-100'} text-1xl font-bold text-center border-2 border-orange-200
             hover:border-orange-300 `} onClick={() => setIsOpen(true)}>
