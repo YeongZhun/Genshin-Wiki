@@ -124,8 +124,9 @@ function MainPage({ isDarkMode }) {
         <p className={`font-semibold ${isDarkMode ? 'text-amber-100' : ''}`}>An ongoing project to compile your fallen journey in the Genshin Impact world!</p>
         <br />
 
-        <div className='w-2/3 relative ' >
-          <div className='image-container relative mainpage-image-md:w-185 mainpage-image-sm:w-120 mainpage-image-ssm:w-56' style={{ height: '300px' }}>
+        <div className='w-11/12 relative '>
+        <div className='image-container relative mainpage-image-md:w-185 mainpage-image-sm:w-120 mainpage-image-ssm:w-56' >
+
             <button
               className={`absolute left-0 top-0 bottom-0 ${handleImageLeftHover} 
                 }`}
@@ -139,7 +140,7 @@ function MainPage({ isDarkMode }) {
             <img
               src={images[currentIndex]}
               className='rounded-md'
-              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+              
             />
             <button
               className={`absolute right-0 top-0 bottom-0 ${handleImageRightHover} 
